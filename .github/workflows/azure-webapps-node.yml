@@ -15,6 +15,7 @@ jobs:
     needs: setup
     runs-on: ubuntu-18.04
     steps:
+    - uses: actions/checkout@main
     - run: |
         npm install
         npm run build 
@@ -22,6 +23,7 @@ jobs:
     needs: build
     runs-on: ubuntu-18.04
     steps:  
+    - uses: actions/checkout@main
     - run: |
         rm -rf public
         mkdir public && cp -rf dist/* public
