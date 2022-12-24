@@ -1,5 +1,3 @@
 <template>
-    <h2>
-        width: 1024px
-    </h2>
+  <h2>width: 1024px</h2>
 </template>

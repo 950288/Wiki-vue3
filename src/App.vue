@@ -4,14 +4,12 @@
 </template>
 
 <script setup lang="ts">
-import Vue from 'vue'
-import Menu from '@/components/Menu.vue';
+import Vue from "vue";
+import Menu from "@/components/Menu.vue";
 // import type { NavItem } from '@/interface';
-import { routes } from '@/main';
-
-
+import { routes } from "@/main";
 </script>
-<style  lang="scss">
+<style lang="scss">
 @import "@/style/index.scss";
 // @include set-color-mode(light);
 * {
@@ -19,7 +17,7 @@ import { routes } from '@/main';
   padding: 0;
   // background-color: var(--has-background-success);
 }
-:root{
+:root {
   background-color: var(--has-background-white);
 }
 </style>

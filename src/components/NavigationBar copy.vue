@@ -3,17 +3,19 @@
     <ul class="nav-items">
       <li v-for="item in items" :key="item.text" class="nav-item">
         <!-- <a :href="item.url" class="nav-link">{{ item.text }}</a> -->
-        <router-link :to="item.url"  class="nav-link">{{item.text}}</router-link>
+        <router-link :to="item.url" class="nav-link">{{
+          item.text
+        }}</router-link>
       </li>
     </ul>
   </nav>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref } from "vue";
 
 export default defineComponent({
-  name: 'NavigationBar',
+  name: "NavigationBar",
   props: {
     items: {
       type: Array as () => NavItem[],

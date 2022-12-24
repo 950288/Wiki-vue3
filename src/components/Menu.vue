@@ -1,14 +1,25 @@
 <template>
   <nav :class="`menu ${float}`">
-    <div :class="`ribbon  ${float}`">
-
-    </div>
+    <div :class="`ribbon  ${float}`"></div>
     <ul class="nav-items">
-      <div :class="`indicator`" :style="{ left: `${indicator_X + drift_X}px`, width: `${indicator_W - drift_W}px` }">
-      </div>
-      <li v-for="(route, index) in routes" :key="route.name" :class="`nav-item`"
-        @mouseenter="handleMouseEnter(route.name, index)" @mouseleave="handleMouseLeave(index)" ref="pages">
-        <router-link :to="route.path" class="nav-link">{{ route.name }}</router-link>
+      <div
+        :class="`indicator`"
+        :style="{
+          left: `${indicator_X + drift_X}px`,
+          width: `${indicator_W - drift_W}px`,
+        }"
+      ></div>
+      <li
+        v-for="(route, index) in routes"
+        :key="route.name"
+        :class="`nav-item`"
+        @mouseenter="handleMouseEnter(route.name, index)"
+        @mouseleave="handleMouseLeave(index)"
+        ref="pages"
+      >
+        <router-link :to="route.path" class="nav-link">{{
+          route.name
+        }}</router-link>
       </li>
       <li :class="`switcher`">
         <ThemeButton />
@@ -18,15 +29,15 @@
 </template>
 
 <script setup lang="ts">
-import type { Ref } from 'vue';
-import { ref, computed, onMounted, watch } from 'vue';
-import type { NavItem } from '@/interface';
-import ThemeButton from '@/components/theme-button.vue'
-import { router } from '@/main';
-import { useWindowScroll } from '@vueuse/core'
+import type { Ref } from "vue";
+import { ref, computed, onMounted, watch } from "vue";
+import type { NavItem } from "@/interface";
+import ThemeButton from "@/components/theme-button.vue";
+import { router } from "@/main";
+import { useWindowScroll } from "@vueuse/core";
 const pages = ref([]);
-const { x, y } = useWindowScroll()
-const float = ref<string>("")
+const { x, y } = useWindowScroll();
+const float = ref<string>("");
 const props = defineProps({
   routes: {
     type: Array as () => NavItem[],
@@ -41,8 +52,10 @@ const drift_W = ref<number>(0);
 const current_pg_index = computed(() => {
   console.log(router.currentRoute.value.name);
   // console.log(props.routes.findIndex(route => route.name === router.currentRoute.value.name));
-  return props.routes.findIndex(route => route.name === router.currentRoute.value.name);
-})
+  return props.routes.findIndex(
+    (route) => route.name === router.currentRoute.value.name
+  );
+});
 function back_position() {
   indicator_X.value = pages.value[current_pg_index.value]["offsetLeft"];
   indicator_W.value = pages.value[current_pg_index.value]["offsetWidth"];
@@ -51,8 +64,8 @@ function back_position() {
 onMounted(() => {
   // back_position()
   window.onresize = () => {
-    back_position()
-  }
+    back_position();
+  };
   watch(y, () => {
     if (y.value > 60) {
       float.value = "float";
@@ -63,14 +76,12 @@ onMounted(() => {
       drift_X.value = 10;
       drift_W.value = 20;
     }
-  })
+  });
   watch([router.currentRoute, float], () => {
-    console.log("watch")
-    back_position()
+    console.log("watch");
+    back_position();
   });
 });
-
-
 
 const currentItem = ref("home") as Ref<string>;
 // const  = ref(null)
@@ -78,17 +89,17 @@ const currentItem = ref("home") as Ref<string>;
 function handleMouseEnter(item: string, pageindex: number) {
   currentItem.value = item;
   // console.log(pages)
-  console.log(currentItem.value)
+  console.log(currentItem.value);
   indicator_X.value = pages.value[pageindex]["offsetLeft"];
   indicator_W.value = pages.value[pageindex]["offsetWidth"];
 }
 
 function handleMouseLeave(pageindex: number) {
-  if (typeof (router.currentRoute.value.name) == "string") {
-    currentItem.value = router.currentRoute.value.name
-    console.log(currentItem.value)
-    console.log(current_pg_index.value)
-    back_position()
+  if (typeof router.currentRoute.value.name == "string") {
+    currentItem.value = router.currentRoute.value.name;
+    console.log(currentItem.value);
+    console.log(current_pg_index.value);
+    back_position();
   } else {
     currentItem.value = "home";
   }
@@ -124,7 +135,6 @@ function handleMouseLeave(pageindex: number) {
     width: 70%;
     left: 15%;
     border-radius: 5px;
-
   }
 }
 

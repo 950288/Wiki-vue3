@@ -1,45 +1,56 @@
 <template>
   <nav class="menu">
     <ul class="nav-items" :ref="'java'">
-      <li v-for="item in items" :key="item.name" class="nav-item" 
-        @mouseenter="handleMouseEnter(item.name , 'nav_link_' + item.name.toLowerCase())"
+      <li
+        v-for="item in items"
+        :key="item.name"
+        class="nav-item"
+        @mouseenter="
+          handleMouseEnter(item.name, 'nav_link_' + item.name.toLowerCase())
+        "
         @mouseleave="handleMouseLeave()"
+      >
+        <router-link
+          :to="item.path"
+          class="nav-link"
+          :ref="`nav_link_${item.name.toLowerCase()}`"
+          >{{ item.name }}</router-link
         >
-        <router-link :to="item.path" class="nav-link" :ref="`nav_link_${item.name.toLowerCase()}`">{{ item.name }}</router-link>
       </li>
-      <li  class="switcher" >
+      <li class="switcher">
         <ThemeButton />
       </li>
-      <div class="indicator" ></div>
+      <div class="indicator"></div>
     </ul>
   </nav>
 </template>
 
 <script setup lang="ts">
-import type { Ref , ComputedRef  } from 'vue';
-import { ref , computed ,onMounted } from 'vue';
-import type { NavItem } from '@/interface';
-import ThemeButton from '@/components/theme-button.vue'
-import { router } from '@/main';
+import type { Ref, ComputedRef } from "vue";
+import { ref, computed, onMounted } from "vue";
+import type { NavItem } from "@/interface";
+import ThemeButton from "@/components/theme-button.vue";
+import { router } from "@/main";
 // import { useElementBounding } from '@vueuse/core'
-import Contact from '@/pages/contact.vue';
+import Contact from "@/pages/contact.vue";
 const props = defineProps({
   items: {
     type: Array as () => NavItem[],
     required: true,
   },
 });
-const java = ref(null)
+const java = ref(null);
 // console.log(nav_link_Home.value)
-const navLinkRefs :ComputedRef<{[name: string]: Ref<HTMLElement>}> = computed<{[name: string]: Ref<HTMLElement>}>(() => {
-  const refs: Record<string, Ref<HTMLElement>> = {};
-  for (const item of props.items) {
-    // refs[`nav_link_${item.name.toLowerCase()}`] = ref<HTMLElement>(null);
-    // console.log(refs[`nav-link-${item.name}`]);
-  }
-  // console.log(refs);
-  return refs;
-});
+const navLinkRefs: ComputedRef<{ [name: string]: Ref<HTMLElement> }> =
+  computed<{ [name: string]: Ref<HTMLElement> }>(() => {
+    const refs: Record<string, Ref<HTMLElement>> = {};
+    for (const item of props.items) {
+      // refs[`nav_link_${item.name.toLowerCase()}`] = ref<HTMLElement>(null);
+      // console.log(refs[`nav-link-${item.name}`]);
+    }
+    // console.log(refs);
+    return refs;
+  });
 
 onMounted(() => {
   console.log(navLinkRefs.value);
@@ -47,30 +58,28 @@ onMounted(() => {
   console.log(navLinkRefs.value["nav_link_home"].value);
   console.log(java);
   console.log(java.value);
-})
-
+});
 
 // const refs: Record<string, Ref<HTMLElement>> = {}
 // for (let i :NavItem of props.items) {
 //   refs[`nav-link-${i.name}`] = ref<HTMLElement>(null);
 // }
 
-
 const currentItem = ref("home") as Ref<string>;
 // const  = ref(null)
 
-function handleMouseEnter(item: string , nav_link_ref: string) {
+function handleMouseEnter(item: string, nav_link_ref: string) {
   currentItem.value = item;
-  console.log(navLinkRefs.value[nav_link_ref].value)
+  console.log(navLinkRefs.value[nav_link_ref].value);
   // console.log(nav_link_Home.value)
 
   // console.log(useElementBounding(navLinkRefs.value[nav_link_ref]));
 }
 
 function handleMouseLeave() {
-  if(typeof(router.currentRoute.value.name) == "string"){
-    currentItem.value = router.currentRoute.value.name
-  }else{
+  if (typeof router.currentRoute.value.name == "string") {
+    currentItem.value = router.currentRoute.value.name;
+  } else {
     currentItem.value = "home";
   }
 }

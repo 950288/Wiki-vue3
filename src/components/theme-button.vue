@@ -1,13 +1,15 @@
 <template>
-    <button  id="button" class="button is-success" @click="themeMode = themeMode === 'dark' ? 'light' : 'dark'">
-        {{themeMode}}
-    </button>
+  <button
+    id="button"
+    class="button is-success"
+    @click="themeMode = themeMode === 'dark' ? 'light' : 'dark'"
+  >
+    {{ themeMode }}
+  </button>
 </template>
 <script setup lang="ts">
-import type { VueElement } from 'vue';
-import { themeMode } from "@/main"
-
-
+import type { VueElement } from "vue";
+import { themeMode } from "@/main";
 </script>
 <style lang="scss" scoped>
 #button {

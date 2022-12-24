@@ -1,45 +1,49 @@
 <script setup lang="ts">
-import tableframe from "@/components/Tableframe.vue"
+import tableframe from "@/components/Tableframe.vue";
 
-let tableHeaders = ['Column 1', 'Column 2', 'Column 3']
+let tableHeaders = ["Column 1", "Column 2", "Column 3"];
 let tableRows = [
-    {
-        id: 1,
-        values: ['Row 1 Column 1', 'Row 1 Column 2', 'Row 1 Column 3']
-    },
-    {
-        id: 2,
-        values: ['Row 2 Column 1', 'Row 2 Column 2', 'Row 2 Column 3']
-    },
-    {
-        id: 3,
-        values: ['Row 3 Column 1', 'Row 3 Column 2', 'Row 3 Column 3']
-    }
-]
-
+  {
+    id: 1,
+    values: ["Row 1 Column 1", "Row 1 Column 2", "Row 1 Column 3"],
+  },
+  {
+    id: 2,
+    values: ["Row 2 Column 1", "Row 2 Column 2", "Row 2 Column 3"],
+  },
+  {
+    id: 3,
+    values: ["Row 3 Column 1", "Row 3 Column 2", "Row 3 Column 3"],
+  },
+];
 </script>
 <template>
-    <header>
-      <br>
-        <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <header>
+    <br />
+    <img
+      alt="Vue logo"
+      class="logo"
+      src="@/assets/logo.svg"
+      width="125"
+      height="125"
+    />
 
-        <div class="wrapper">
-            <!-- <HelloWorld msg="You did it!" /> -->
-        </div>
-    </header>
-    <main>
-        <tableframe :headers="tableHeaders" :rows="tableRows" />
-        <br>
-        <tableframe :headers="tableHeaders" :rows="tableRows" />
-        <br>
-        <tableframe :headers="tableHeaders" :rows="tableRows" />
-        <br>
-        <tableframe :headers="tableHeaders" :rows="tableRows" />
-        <br>
-        <tableframe :headers="tableHeaders" :rows="tableRows" />
-        <br>
-
-    </main>
+    <div class="wrapper">
+      <!-- <HelloWorld msg="You did it!" /> -->
+    </div>
+  </header>
+  <main>
+    <tableframe :headers="tableHeaders" :rows="tableRows" />
+    <br />
+    <tableframe :headers="tableHeaders" :rows="tableRows" />
+    <br />
+    <tableframe :headers="tableHeaders" :rows="tableRows" />
+    <br />
+    <tableframe :headers="tableHeaders" :rows="tableRows" />
+    <br />
+    <tableframe :headers="tableHeaders" :rows="tableRows" />
+    <br />
+  </main>
 </template>
 
 <style scoped>
