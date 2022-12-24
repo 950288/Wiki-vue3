@@ -26,4 +26,4 @@ jobs:
         repo: 950288/web
         target_branch: dist
         build_dir: dist
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.S95028 }}
