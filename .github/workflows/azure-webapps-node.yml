@@ -10,6 +10,7 @@ jobs:
     - run: 
         npm install
         npm run build 
+        ls
   deploy:
     runs-on: ubuntu-18.04
     steps:  
