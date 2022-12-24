@@ -9,14 +9,14 @@ jobs:
     steps:
     - uses: actions/checkout@main
     - name: setup
-    - run: |
+      run: |
         npm cache clean --force
     - name: setup
-    - run: |
+      run: |
         npm install
         npm run build 
     - name: setup
-    - run: |
+      run: |
         ls
         rm -rf public
         mkdir public && cp -rf dist/* public
