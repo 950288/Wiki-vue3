@@ -1,0 +1,27 @@
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  only:
+    - main
+  script:
+    - npm install
+    - npm run build
+
+pages:
+  stage: deploy
+  only:
+    - main
+  script:
+    - rm -rf public
+    - mkdir public && cp -rf dist/* public
+  artifacts:
+    paths:
+      - public
+
+cache:
+  paths:
+    - node_modules
+    - dist
