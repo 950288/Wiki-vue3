@@ -1,18 +1,18 @@
-name:CI
+name: CI
 on:
   push:
-    branchs:
+    branches:
       - main
 jobs:
   build:
-    name: deploy to staging
     runs-on: ubuntu-18.04
     steps:
-      run: 
+    - run: 
         npm install
         npm run build 
   deploy:
+    runs-on: ubuntu-18.04
     steps:  
-      run: 
+    - run: 
         rm -rf public
         mkdir public && cp -rf dist/* public
