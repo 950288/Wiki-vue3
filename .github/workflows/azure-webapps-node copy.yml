@@ -4,14 +4,24 @@ on:
     branches:
       - main
 jobs:
-  build:
+  setup:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@main
     - run: |
         npm cache clean --force
+  build:
+    needs: setup
+    runs-on: ubuntu-18.04
+    steps:
+    - run: |
+        ls
         npm install
         npm run build 
-        ls
+  deploy:
+    needs: build
+    runs-on: ubuntu-18.04
+    steps:  
+    - run: |
         rm -rf public
         mkdir public && cp -rf dist/* public
