@@ -21,9 +21,9 @@ jobs:
         rm -rf public
         mkdir public && cp -rf dist/* public
     - name: Deploy to GitHub Pages
-      uses: crazy-max/ghaction-github-pages@v2
+      uses: crazy-max/github-pages-deploy-action@v4
       with: 
-        repo: 950288/web
-        target_branch: dist
-        build_dir: dist
-        GITHUB_TOKEN: ${{ secrets.S95028 }}
+        folder: web
+        # target_branch: dist
+        # build_dir: dist
+        # GITHUB_TOKEN: ${{ secrets.S95028 }}
