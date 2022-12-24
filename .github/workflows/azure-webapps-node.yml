@@ -26,5 +26,6 @@ jobs:
     steps:  
     - uses: actions/checkout@main
     - run: |
+        ls
         rm -rf public
-        mkdir public && cp -rf dist/* public
+        mkdir public && cp -rf /dist/* public
