@@ -17,6 +17,7 @@ jobs:
     steps:
  #   - uses: actions/checkout@main
     - run: |
+        cd /home/runner/work/web/web/
         npm install
         npm run build 
         ls
@@ -26,6 +27,7 @@ jobs:
     steps:  
  #   - uses: actions/checkout@main
     - run: |
+        cd /home/runner/work/web/web/
         ls
         rm -rf public
         mkdir public && cp -rf /dist/* public
