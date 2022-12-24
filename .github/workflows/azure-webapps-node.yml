@@ -20,10 +20,3 @@ jobs:
         ls
         rm -rf public
         mkdir public && cp -rf dist/* public
-    - name: Deploy to GitHub Pages
-      uses: crazy-max/github-pages-deploy-action@v4
-      with: 
-        folder: web
-        # target_branch: dist
-        # build_dir: dist
-        # GITHUB_TOKEN: ${{ secrets.S95028 }}
