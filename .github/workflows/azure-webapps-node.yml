@@ -1,15 +1,12 @@
 name:CI
-
 on:
   push:
-    branch:
+    branchs:
       - main
-env:
-  node:latest
-
-
 jobs:
   build:
+    name: deploy to staging
+    runs-on: ubuntu-18.04
     steps:
       run: 
         npm install
@@ -19,9 +16,3 @@ jobs:
       run: 
         rm -rf public
         mkdir public && cp -rf dist/* public
-
-
-cache:
-  paths:
-    - node_modules
-    - dist
