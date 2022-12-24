@@ -8,10 +8,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@main
+    - name: setup
     - run: |
         npm cache clean --force
+    - name: setup
+    - run: |
         npm install
         npm run build 
+    - name: setup
+    - run: |
         ls
         rm -rf public
         mkdir public && cp -rf dist/* public
+    - name: Deploy to GitHub Pages
+      uses: crazy-max/ghaction-github-pages@v2
+      with: 
+        repo: 950288/web
+        target_branch: dist
+        build_dir: dist
