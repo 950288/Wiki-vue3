@@ -1,25 +1,25 @@
-stages:
-  - build
-  - deploy
+name:CI
 
-build:
-  stage: build
-  only:
-    - main
-  script:
-    - npm install
-    - npm run build
+on:
+  push:
+    branch:
+      - main
+env:
+  node:latest
 
-pages:
-  stage: deploy
-  only:
-    - main
-  script:
-    - rm -rf public
-    - mkdir public && cp -rf dist/* public
-  artifacts:
-    paths:
-      - public
+
+jobs:
+  build:
+    steps:
+      run: 
+        npm install
+        npm run build 
+  deploy:
+    steps:  
+      run: 
+        rm -rf public
+        mkdir public && cp -rf dist/* public
+
 
 cache:
   paths:
