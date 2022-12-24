@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
     - run: |
-        npm cache clean
+        npm cache clean --force
   build:
     runs-on: ubuntu-18.04
     steps:
