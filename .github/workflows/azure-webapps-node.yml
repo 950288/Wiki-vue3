@@ -7,13 +7,13 @@ jobs:
   build:
     runs-on: ubuntu-18.04
     steps:
-    - run: 
+    - run: |
         npm install
         npm run build 
         ls
   deploy:
     runs-on: ubuntu-18.04
     steps:  
-    - run: 
+    - run: |
         rm -rf public
         mkdir public && cp -rf dist/* public
