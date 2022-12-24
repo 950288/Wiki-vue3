@@ -7,8 +7,8 @@ jobs:
   setup:
     runs-on: ubuntu-18.04
     steps:
-    - run: |
     - uses: actions/checkout@main
+    - run: |
         npm cache clean --force
   build:
     needs: setup
