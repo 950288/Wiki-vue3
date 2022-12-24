@@ -11,11 +11,11 @@ jobs:
     - name: setup
       run: |
         npm cache clean --force
-    - name: setup
+    - name: build
       run: |
         npm install
         npm run build 
-    - name: setup
+    - name: deploy
       run: |
         ls
         rm -rf public
