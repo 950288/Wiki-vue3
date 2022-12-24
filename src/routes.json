@@ -1,0 +1,6 @@
+{"routes" : [
+    { "path": "/", "name":"Home" ,"component": "HomePage" },
+    { "path": "/about", "name":"About" , "component": "AboutPage" },
+    { "path": "/contact", "name":"Contact" , "component": "ContactPage" },
+    { "path": "/look", "name":"Look" , "component": "LookPage" }
+]}
