@@ -10,12 +10,12 @@ jobs:
     - uses: actions/checkout@main
     - run: |
         npm cache clean --force
+        ls
   build:
     needs: setup
     runs-on: ubuntu-18.04
     steps:
     - run: |
-        ls
         npm install
         npm run build 
   deploy:
