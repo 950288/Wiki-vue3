@@ -19,6 +19,7 @@ jobs:
     - run: |
         npm install
         npm run build 
+        ls
   deploy:
     needs: build
     runs-on: ubuntu-18.04
