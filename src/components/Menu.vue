@@ -118,6 +118,7 @@ function handleMouseLeave(pageindex: number) {
   height: 60px;
   width: 100%;
   left: 0;
+  z-index: 2;
 
   .ribbon {
     top: 0;

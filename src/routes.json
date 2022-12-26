@@ -3,5 +3,6 @@
     { "path": "/about", "name":"About" , "component": "" },
     { "path": "/contact", "name":"Contact" , "component": "" },
     { "path": "/look", "name":"Look" , "component": "" },
-    { "path": "/test", "name":"Test" , "component": "" }
+    { "path": "/test", "name":"Test" , "component": "" },
+    { "path": "/editor", "name":"Editor" , "component": "" }
 ]}
