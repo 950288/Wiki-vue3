@@ -1,6 +1,7 @@
 {"routes" : [
-    { "path": "/", "name":"Home" ,"component": "HomePage" },
-    { "path": "/about", "name":"About" , "component": "AboutPage" },
-    { "path": "/contact", "name":"Contact" , "component": "ContactPage" },
-    { "path": "/look", "name":"Look" , "component": "LookPage" }
+    { "path": "/", "name":"Home" ,"component": "" },
+    { "path": "/about", "name":"About" , "component": "" },
+    { "path": "/contact", "name":"Contact" , "component": "" },
+    { "path": "/look", "name":"Look" , "component": "" },
+    { "path": "/test", "name":"Test" , "component": "" }
 ]}

@@ -50,7 +50,7 @@ const indicator_W = ref<number>(0);
 const drift_X = ref<number>(0);
 const drift_W = ref<number>(0);
 const current_pg_index = computed(() => {
-  console.log(router.currentRoute.value.name);
+  // console.log(router.currentRoute.value.name);
   // console.log(props.routes.findIndex(route => route.name === router.currentRoute.value.name));
   return props.routes.findIndex(
     (route) => route.name === router.currentRoute.value.name
@@ -78,7 +78,7 @@ onMounted(() => {
     }
   });
   watch([router.currentRoute, float], () => {
-    console.log("watch");
+    // console.log("watch");
     back_position();
   });
 });
@@ -89,7 +89,7 @@ const currentItem = ref("home") as Ref<string>;
 function handleMouseEnter(item: string, pageindex: number) {
   currentItem.value = item;
   // console.log(pages)
-  console.log(currentItem.value);
+  // console.log(currentItem.value);
   indicator_X.value = pages.value[pageindex]["offsetLeft"];
   indicator_W.value = pages.value[pageindex]["offsetWidth"];
 }
@@ -97,8 +97,8 @@ function handleMouseEnter(item: string, pageindex: number) {
 function handleMouseLeave(pageindex: number) {
   if (typeof router.currentRoute.value.name == "string") {
     currentItem.value = router.currentRoute.value.name;
-    console.log(currentItem.value);
-    console.log(current_pg_index.value);
+    // console.log(currentItem.value);
+    // console.log(current_pg_index.value);
     back_position();
   } else {
     currentItem.value = "home";
