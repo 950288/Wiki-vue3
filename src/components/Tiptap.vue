@@ -47,8 +47,6 @@
     </button>
     <button class="button is-link" @click="save">save</button>
   </div>
-
-    <br>
     <br>
   <editor-content :editor="editor" class="edit" />
   <br>
@@ -145,7 +143,7 @@ function save(){
 button {
   margin: 0 5px 5px 0;
   display: inline-block;
-  opacity: 0.6;
+  opacity: 0.9;
 }
 
 button:hover{

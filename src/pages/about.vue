@@ -1,5 +1,7 @@
 <template>
   <div class="content is-large">
+    <!-- iGEMGotool about1 start-->
+    <!-- iGEMGotool about2 start-->
     <h1>Hello World</h1>
     <p>
       Lorem ipsum<sup><a>[1]</a></sup> dolor sit amet, consectetur adipiscing

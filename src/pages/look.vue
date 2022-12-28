@@ -5,7 +5,11 @@
       2022-12-25 22:05:14
     </p>
     <div id="chart">
+
+      <!-- iGEMGotool look1 start-->
       <apexchart v-if="renderComponent" type="line" height="350" :options="chartOptions" :series="series"></apexchart>
+
+      <!-- iGEMGotool look1 start-->
       <apexchart v-if="renderComponent" type="area" height="350" :options="chartOptions0" :series="series0"></apexchart>
       <apexchart v-if="renderComponent" type="line" height="350" :options="chartOptions" :series="series"></apexchart>
       <apexchart v-if="renderComponent" type="area" height="350" :options="chartOptions0" :series="series0"></apexchart>
@@ -15,7 +19,7 @@
 <script setup lang="ts">
 import apexchart from 'vue3-apexcharts';
 import { themeMode } from "@/main";
-import { nextTick, watch ,ref } from 'vue';
+import { nextTick, watch, ref } from 'vue';
 const renderComponent = ref(true);
 
 console.log(themeMode.value);

@@ -1,5 +1,6 @@
 <template>
   <div class="content is-medium">
+    <!-- iGEMGotool contact1 start-->
     <h1>Hello World</h1>
     <ol type="1">
       <li>Coffee</li>
