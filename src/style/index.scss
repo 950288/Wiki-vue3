@@ -11,8 +11,11 @@
 @import "./light/light.scss";
 @import "./dark/dark.scss";
 @import "./heading.scss";
+@import "./col.scss";
 
 .content{
-    margin: 0 15% 0 15%;
-    margin-top: 1.5em;
+    border-radius: 4px;
+    background: var(--bg-float);
 }
+
+// inline : border-radius, .content-margin

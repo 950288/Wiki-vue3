@@ -1,7 +1,58 @@
-
-h1,h2,h3,h4,h5,h6 , .content h1,.content h2,.content h3,.content h4,.content h5,.content h6 {
-    color: var(--has-text-grey);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+    color: var(--them-h2);
 }
-*{
+
+.content.is-large {
+    font-size: 1.5rem;
+}
+.content-adapt{
+    margin: 0 15% 0 15%;
+    margin-top: 0.7em;
+    padding: 0.7em;
+}
+
+@media (max-width: 1280px) {
+    .content.is-large {
+        font-size: 1.35rem;
+    }
+}
+@media (max-width: 768px) {
+    .content.is-large {
+        font-size: 1.25rem;
+    }
+    .content-adapt{
+        margin: 0 9% 0 9%;
+        margin-top: 0.4em;
+    }
+}
+@media (max-width: 640px) {
+    .content.is-large {
+        font-size: 1rem;
+    }
+    .content-adapt{
+        margin: 0;
+        padding:1.2em;
+
+    }
+}
+
+
+.content h1 {
+    color: var(--them-h1);
+    font-family: Barlow;
+}
+
+* {
     color: var(--has-text-black);
 }
