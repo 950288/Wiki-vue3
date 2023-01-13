@@ -1,12 +1,12 @@
 <template>
-  <nav :class="`menu`">
-    <div :class="`ribbon`"></div>
+  <nav :class="`menu ${float}`">
+    <div :class="`ribbon  ${float}`"></div>
     <ul class="nav-items">
       <div
         :class="`indicator`"
         :style="{
-          left: `${indicator_X}px`,
-          width: `${indicator_W}px`,
+          left: `${indicator_X + drift_X}px`,
+          width: `${indicator_W - drift_W}px`,
         }"
       ></div>
       <li
@@ -149,6 +149,11 @@ function handleMouseLeave(pageindex: number) {
   padding: 0;
   width: 100%;
 }
+
+// .nav-item:first-of-type {
+//   // margin-left: -10px;
+//   // background: #000;
+// }
 
 .nav-item {
   display: flex;

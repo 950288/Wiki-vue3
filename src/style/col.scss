@@ -4,22 +4,36 @@ $md: 768px;
 $lg: 992px;
 $xl: 1200px;
 
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+}
+
 // Define base col style
 .col {
-    flex: 0 0 calc(100% / 12);
-    max-width: calc(100% / 12);
+    flex: 1 0 0%;
 }
-@for $i from 1 through 12 {
+
+@for $i from 0 through 24 {
     .col-#{$i} {
-        width: calc(100% / 12 * $i);
+        width: calc(100% / 24 * $i);
+    }
+    .offset-#{$i} {
+        margin-left: calc(100% / 24 * $i);
     }
 }
+
 // Define a function to generate columns classes
 @function generate-col-classes($size, $breakpoint) {
     $classes: ();
-    @for $i from 1 through $size {
+
+    @for $i from 0 through $size {
         $classes: append($classes, "col-#{$breakpoint}-#{$i}");
     }
+
     @return $classes;
 }
 
@@ -27,14 +41,19 @@ $xl: 1200px;
     @return str-slice(str-slice($class, str-length("col-")), str-length("-"));
 }
 
-@each $breakpoint, $value in (xl: $xl, lg: $lg,md: $md,sm: $sm) {
+@each $breakpoint,
+$value in (xl: $xl, lg: $lg, md: $md, sm: $sm) {
     @media (max-width: $value) {
-        @each $class in generate-col-classes(12, $breakpoint) {
+        @each $class in generate-col-classes(24, $breakpoint) {
             $col-size: str-slice($class, str-length("col-#{$breakpoint}--"));
+
             .#{$class} {
-                width: calc(100% / 12 * #{$col-size});
+                width: calc(100% / 24 * #{$col-size});
+            }
+
+            .offset-#{$breakpoint}-#{$col-size} {
+                margin-left: calc(100% / 24 * #{$col-size});
             }
         }
     }
 }
-

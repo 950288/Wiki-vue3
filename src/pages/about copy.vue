@@ -1,14 +1,15 @@
 <template>
-  <div class="content is-large">
+  <div class="content is-large content-adapt">
     <!-- iGEMGotool about1 start-->
     <!-- iGEMGotool about2 start-->
-
     <h1>Hello World</h1>
     <p>
       Lorem ipsum<sup><a>[1]</a></sup> dolor sit amet, consectetur adipiscing
       elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius
       lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce
-      erat odio, sollicitudin vel erat vel, interdum mattis neque. Sub<sub>script</sub>
+      erat odio, sollicitudin vel erat vel, interdum mattis neque. Sub<sub
+        >script</sub
+      >
       works as well!
     </p>
     <h2>Second level</h2>
@@ -83,7 +84,8 @@
     &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra nec nulla vitae mollis.&lt;/p&gt;
   &lt;/body&gt;
 &lt;/html&gt;
-</pre>
+</pre
+    >
     <p>
       Maecenas eleifend sollicitudin dui, faucibus sollicitudin augue cursus
       non. Ut finibus eleifend arcu ut vehicula. Mauris eu est maximus est porta
@@ -151,57 +153,6 @@
       Suspendisse euismod, elit vel rutrum commodo, ipsum tortor maximus dui,
       sed varius sapien odio vitae est. Etiam at cursus metus.
     </p>
-    <div class="row">
-      <div class="te1 col test"><button id="button"
-          class="button is-success">sdszsDDGsfvasgadszsDDGsfvasgasffasffasfa</button></div>
-      <div class="te1 col test"><button id="button" class="button is-success">sdszsDDG</button></div>
-      <div class="te1 col test"><button id="button" class="button is-success">sdszsDDGsdszsDDG</button></div>
-      <div class="te1 col test"><button id="button" class="button is-success">sdszsDDG</button></div>
-      <div class="te1 col test"><button id="button" class="button is-success">sdszsDDGsdszsDDG</button></div>
-      <div class="te1 col test"><button id="button" class="button is-success">sdszsDDG</button></div>
-      <div class="te1 col test"><button id="button" class="button is-success">sdszsDDG</button></div>
-      <div class="te1 col test"><button id="button" class="button is-success">sdszsDDG</button></div>
-    </div>
   </div>
 </template>
-<style lang="scss" scoped>
-.te1 {
-  border-radius: 4px;
-  margin: 0rem;
-  height: 5rem;
-  // background-color: var(--them-h2);
-}
-
-.content {
-  box-sizing: border-box;
-  margin-top: 1.5rem;
-  padding: 0.5rem;
-
-  // display: flex;
-  // flex-wrap: wrap;
-}
-
-@media (max-width: 768px) {
-  .content {
-    margin-top: 0rem;
-    border-radius: 0px;
-  }
-}
-
-#button {
-  display: flex;
-  align-items: center;
-  /* Vertically center the button element */
-  justify-content: center;
-  /* Horizontally center the button element */
-  height: 100%;
-  position: relative;
-  color: var(--has-text-success);
-  background: var(--has-background-success);
-  width: 100%;
-}
-
-.test {
-  padding: 1rem;
-}
-</style>
+<style lang="scss" scoped></style>

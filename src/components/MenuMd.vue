@@ -2,14 +2,14 @@
   <nav :class="`menu`">
     <div :class="`ribbon`"></div>
     <ul class="nav-items">
-      <div
+      <!-- <div
         :class="`indicator`"
         :style="{
           left: `${indicator_X}px`,
           width: `${indicator_W}px`,
         }"
-      ></div>
-      <li
+      ></div> -->
+      <!-- <li
         v-for="(route, index) in routes"
         :key="route.name"
         :class="`nav-item`"
@@ -20,7 +20,7 @@
         <router-link :to="route.path" class="nav-link">{{
           route.name
         }}</router-link>
-      </li>
+      </li> -->
       <li :class="`switcher`">
         <ThemeButton />
       </li>
@@ -35,75 +35,7 @@ import type { NavItem } from "@/interface";
 import ThemeButton from "@/components/theme-button.vue";
 import { router } from "@/main";
 import { useWindowScroll } from "@vueuse/core";
-const pages = ref([]);
-const { x, y } = useWindowScroll();
-const float = ref<string>("");
-const props = defineProps({
-  routes: {
-    type: Array as () => NavItem[],
-    required: true,
-  },
-});
 
-const indicator_X = ref<number>(0);
-const indicator_W = ref<number>(0);
-const drift_X = ref<number>(0);
-const drift_W = ref<number>(0);
-const current_pg_index = computed(() => {
-  // console.log(router.currentRoute.value.name);
-  // console.log(props.routes.findIndex(route => route.name === router.currentRoute.value.name));
-  return props.routes.findIndex(
-    (route) => route.name === router.currentRoute.value.name
-  );
-});
-function back_position() {
-  indicator_X.value = pages.value[current_pg_index.value]["offsetLeft"];
-  indicator_W.value = pages.value[current_pg_index.value]["offsetWidth"];
-}
-
-onMounted(() => {
-  // back_position()
-  window.onresize = () => {
-    back_position();
-  };
-  watch(y, () => {
-    if (y.value > 60) {
-      float.value = "float";
-      drift_X.value = 0;
-      drift_W.value = 0;
-    } else {
-      float.value = "";
-      drift_X.value = 10;
-      drift_W.value = 20;
-    }
-  });
-  watch([router.currentRoute, float], () => {
-    // console.log("watch");
-    back_position();
-  });
-});
-
-const currentItem = ref("home") as Ref<string>;
-// const  = ref(null)
-
-function handleMouseEnter(item: string, pageindex: number) {
-  currentItem.value = item;
-  // console.log(pages)
-  // console.log(currentItem.value);
-  indicator_X.value = pages.value[pageindex]["offsetLeft"];
-  indicator_W.value = pages.value[pageindex]["offsetWidth"];
-}
-
-function handleMouseLeave(pageindex: number) {
-  if (typeof router.currentRoute.value.name == "string") {
-    currentItem.value = router.currentRoute.value.name;
-    // console.log(currentItem.value);
-    // console.log(current_pg_index.value);
-    back_position();
-  } else {
-    currentItem.value = "home";
-  }
-}
 </script>
 
 <style lang="scss" scoped>
