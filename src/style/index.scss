@@ -19,4 +19,11 @@
     background: var(--bg-float);
 }
 
+*{
+    transition: all 0.2s ease;
+}
+:root {
+--vt-font-family-base: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+--vt-font-family-mono: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
 // inline : border-radius, .content-margin

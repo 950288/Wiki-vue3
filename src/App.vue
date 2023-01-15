@@ -3,9 +3,11 @@
   <MenuMd :routes="routes" v-show="!inMD" />
   <div style="root_bg">
     <SideBarMd class="col-0 col-md-24" v-show="!inMD" />
-    <div class="col-21 col-lg-22  col-md-24 offset-1 offset-md-0 row">
-      <SideBar class="col-5 col-md-0" v-show="inMD" />
-      <router-view :root_bg="root_bg" class="col-19 col-md-24" />
+    <div class="col-22 col-lg-23 col-md-24 offset-md-0 row">
+      <SideBar class="col-md-0" :class="[{ 'col-1': !toggleSidebar }, { 'col-4': toggleSidebar }]" v-show="inMD"
+        @toggle-sidebar="toggleSidebar = toggleSidebar ? false : true" />
+      <router-view :root_bg="root_bg" class="col-md-24"
+        :class="[{ 'col-22 offset-1': !toggleSidebar }, { 'col-20': toggleSidebar }]" />
     </div>
     <div class="detect col-md-0" ref="detectInMD">
       1
@@ -14,27 +16,28 @@
 </template>
 
 <script setup lang="ts">
-import Vue from "vue";
-import { ref, watch, onMounted } from "vue";
+import { ref, onUpdated, onMounted, nextTick, inject, getCurrentInstance ,watch } from "vue";
 import Menu from "@/components/Menu.vue";
 import MenuMd from "@/components/MenuMd.vue";
 import SideBar from "@/components/SideBar.vue";
 import SideBarMd from "@/components/SideBarMd.vue";
-import { routes } from "@/main";
+import { useRoute } from 'vue-router'
+import { router , routes } from "@/main";
+const route = useRoute()
+const toggleSidebar = ref(false);
 const root_bg = ref("root-bg");
 const detectInMD = ref(true);
 const inMD = ref(null);
+const Headers = ref()
+const { proxy } = <any>getCurrentInstance();
 
 onMounted(() => {
-  window.onresize = () => {
-    console.log(detectInMD.value);
+  watch(proxy.onresize , () => {
     inMD.value = detectInMD.value.offsetWidth > 0;
-    console.log(detectInMD.value.offsetWidth);
-
-  };
-  console.log(detectInMD.value);
+  });
   inMD.value = detectInMD.value.offsetWidth > 0;
   console.log(detectInMD.value.offsetWidth);
+
 });
 
 </script>

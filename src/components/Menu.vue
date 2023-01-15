@@ -29,12 +29,14 @@
 </template>
 
 <script setup lang="ts">
-import type { Ref } from "vue";
+import { getCurrentInstance, type Ref } from "vue";
 import { ref, computed, onMounted, watch } from "vue";
 import type { NavItem } from "@/interface";
 import ThemeButton from "@/components/theme-button.vue";
 import { router } from "@/main";
 import { useWindowScroll } from "@vueuse/core";
+const { proxy } = <any>getCurrentInstance();
+
 const pages = ref([]);
 const { x, y } = useWindowScroll();
 const float = ref<string>("");
@@ -57,15 +59,15 @@ const current_pg_index = computed(() => {
   );
 });
 function back_position() {
+  console.log("back_position");
   indicator_X.value = pages.value[current_pg_index.value]["offsetLeft"];
   indicator_W.value = pages.value[current_pg_index.value]["offsetWidth"];
 }
 
 onMounted(() => {
-  // back_position()
-  window.onresize = () => {
+  watch(proxy.onresize , () => {
     back_position();
-  };
+  });
   watch(y, () => {
     if (y.value > 60) {
       float.value = "float";
