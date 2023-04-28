@@ -64,17 +64,6 @@ onMounted(() => {
   watch(proxy.onresize, () => {
     back_position();
   });
-  watch(y, () => {
-    if (y.value > 60) {
-      float.value = "float";
-      drift_X.value = 0;
-      drift_W.value = 0;
-    } else {
-      float.value = "";
-      drift_X.value = 10;
-      drift_W.value = 20;
-    }
-  });
   watch([router.currentRoute, float], () => {
     // console.log("watch");
     back_position();

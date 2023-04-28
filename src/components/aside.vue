@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted,watch,getCurrentInstance } from 'vue';
+import { getCurrentInstance } from 'vue';
 const { proxy } = <any>getCurrentInstance();
 const headingList = proxy.headingList
 </script>

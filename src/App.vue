@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 import { ref, onUpdated, onMounted, nextTick, inject, getCurrentInstance ,watch } from "vue";
-import Menu from "@/components/Menu.vue";
+import Menu from "@/components/Menu3.0.vue";
 import MenuMd from "@/components/MenuMd.vue";
 import SideBar from "@/components/SideBar.vue";
 import SideBarMd from "@/components/SideBarMd.vue";

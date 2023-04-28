@@ -1,8 +1,8 @@
 <template>
   <nav :class="`menu`">
-    <div :class="`ribbon`"></div>
+    <div :class="`ribbon  ${float}`"></div>
     <ul class="nav-items col-md-22 col-20">
-      <div :class="`indicator`" :style="{
+      <div :class="`indicator   ${float}`" :style="{
           left: `${indicator_X}px`,
           width: `${indicator_W}px`,
         }"></div>
@@ -65,7 +65,7 @@ onMounted(() => {
     back_position();
   });
   watch(y, () => {
-    if (y.value > 60) {
+    if (y.value > 1) {
       float.value = "float";
       drift_X.value = 0;
       drift_W.value = 0;
@@ -122,18 +122,14 @@ function handleMouseLeave(pageindex: number) {
     top: 0;
     background-color: #333;
     position: absolute;
-    height: 60px;
+    height: 0px;
     width: 100%;
     left: 0;
     transition: width 0.2s ease, height 0.2s ease, top 0.2s ease, left 0.2s ease;
   }
 
   .ribbon.float {
-    height: 40px;
-    top: 10px;
-    width: 70%;
-    left: 15%;
-    border-radius: 5px;
+    height: 60px;
   }
 }
 
@@ -176,10 +172,14 @@ function handleMouseLeave(pageindex: number) {
   left: 0;
   width: 60px;
   height: 40px;
-  background-color: rgb(70, 70, 70);
   border-radius: 5px;
+  background-color: rgb(91 91 216);
   transform: translateX(0);
-  transition: left 0.2s ease, width 0.2s ease;
+  transition: left 0.2s ease, width 0.2s ease,background-color 0.2s ease;
   animation: none 1s ease 0 1 normal;
+}
+.indicator.float{
+  background-color: rgb(70, 70, 70);
+
 }
 </style>
