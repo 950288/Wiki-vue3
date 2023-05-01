@@ -7,7 +7,7 @@
           width: `${indicator_W}px`,
         }"></div>
       <li>
-        <Logo  :class="`nav-item`"/>
+        <Logo :class="`nav-item`" />
 
       </li>
       <li v-for="(route, index) in routes" :key="route.name" :class="`nav-item`"
@@ -173,12 +173,24 @@ function handleMouseLeave(pageindex: number) {
   width: 60px;
   height: 40px;
   border-radius: 5px;
-  background-color: rgb(91 91 216);
+  // background-color: rgb(91 91 216);
   transform: translateX(0);
-  transition: left 0.2s ease, width 0.2s ease,background-color 0.2s ease;
+  transition: left 0.2s ease, width 0.2s ease, background-color 0.2s ease;
   animation: none 1s ease 0 1 normal;
 }
-.indicator.float{
+
+html.dark .indicator {
+  --color-indicator: rgb(48, 48, 48);
+}
+html .indicator {
+  --color-indicator: rgb(99, 99, 234);
+}
+
+.indicator {
+  background-color: var(--color-indicator);
+}
+
+.indicator.float {
   background-color: rgb(70, 70, 70);
 
 }
