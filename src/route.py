@@ -20,15 +20,14 @@ def generate_route_ts(json_file):
         })
 
     imports_str = '\n'.join(imports)
-    components_str = ',\n        '.join([str(component) for component in components])
+    components_str = ',\n        '.join([f"{{component: {component['component']}, name: '{component['name']}', path: '{component['path']}'}}" for component in components])
 
     route_ts = f'''{imports_str}
 
-export default {{
-    "routes": [
-        {components_str}
-    ]
-}}
+export const routes = [
+    {components_str}
+]
+export default routes;
 '''
 
     with open('routes.ts', 'w') as f:
