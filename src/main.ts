@@ -7,13 +7,7 @@ import routes  from "@/routes";
 
 console.log(routes);
 
-// import routes_list from "@/routes.json";
 export const themeMode = useColorMode();
-
-// routes_list.routes.forEach((route: { component: any; name: string, path: string }, index) => {
-//   route.component = () => import(`@/pages/${route.name.toLowerCase()}.vue`);
-//   route.path = "/vue3" + route.path;
-// });
 
 export const router = createRouter({
   history: createWebHistory(),

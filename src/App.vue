@@ -1,6 +1,7 @@
 <template>
-  <Menu :routes="routes" v-show="inMD" />
-  <MenuMd :routes="routes" v-show="!inMD" />
+  <!-- <Menu :routes="routes" v-show="inMD" /> -->
+  <Menu :routes="routes" v-show="true" />
+  <!-- <MenuMd :routes="routes" v-show="!inMD" /> -->
   <div style="root_bg">
     <!-- <SideBarMd class="col-0 col-md-24" v-show="!inMD" /> -->
     <div class="detect col-md-0" ref="detectInMD">
@@ -74,5 +75,11 @@ onMounted(() => {
 
   // display: flex;
   // flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  .content {
+    margin: 0rem;
+    border-radius: 0px;
+  }
 }
 </style>

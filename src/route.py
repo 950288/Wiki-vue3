@@ -16,7 +16,7 @@ def generate_route_ts(json_file):
         components.append({
             "component": component_name,
             "name": route['name'],
-            "path": route['path']
+            "path": '/vue3' + route['path']
         })
 
     imports_str = '\n'.join(imports)

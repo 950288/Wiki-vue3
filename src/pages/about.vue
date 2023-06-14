@@ -169,13 +169,6 @@
   // background-color: var(--them-h2);
 }
 
-@media (max-width: 768px) {
-  .content {
-    margin: 0rem;
-    border-radius: 0px;
-  }
-}
-
 #button {
   display: flex;
   align-items: center;
