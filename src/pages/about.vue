@@ -1,8 +1,5 @@
 <template>
   <div class="content is-large">
-    <!-- iGEMGotool about1 start-->
-    <!-- iGEMGotool about2 start-->
-
     <h1>Hello World</h1>
     <p>
       Lorem ipsum<sup><a>[1]</a></sup> dolor sit amet, consectetur adipiscing
@@ -172,18 +169,9 @@
   // background-color: var(--them-h2);
 }
 
-.content {
-  box-sizing: border-box;
-  margin-top: 1.5rem;
-  padding: 0.5rem;
-
-  // display: flex;
-  // flex-wrap: wrap;
-}
-
 @media (max-width: 768px) {
   .content {
-    margin-top: 0rem;
+    margin: 0rem;
     border-radius: 0px;
   }
 }

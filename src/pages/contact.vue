@@ -1,55 +1,18 @@
 <template>
-  <div class="content is-medium">
-    <!-- iGEMGotool contact1 start--><table-pro><h1>Basic part</h1><Tablegotool><tr><th colspan="1" rowspan="1"><h1>Part Number</h1></th><th colspan="1" rowspan="1"><h1>Name</h1></th><th colspan="1" rowspan="1"><h1>length</h1></th><th colspan="1" rowspan="1"><h1>Type</h1></th></tr><tr><td colspan="1" rowspan="1"><h1><a target="_blank" rel="noopener noreferrer nofollow" href="http://parts.igem.org/Part:BBa_K4227000">K4227000</a></h1></td><td colspan="1" rowspan="1"><h1>p7z6</h1></td><td colspan="1" rowspan="1"><h1>3193 bp</h1></td><td colspan="1" rowspan="1"><h1>plasmid</h1></td></tr><tr><td colspan="1" rowspan="1"><h1><a target="_blank" rel="noopener noreferrer nofollow" href="http://parts.igem.org/Part:BBa_K4227001">K4227001</a></h1></td><td colspan="1" rowspan="1"><h1>MuB</h1></td><td colspan="1" rowspan="1"><h1>3882 bp</h1></td><td colspan="1" rowspan="1"><h1>coding</h1></td></tr><tr><td colspan="1" rowspan="1"><h1><a target="_blank" rel="noopener noreferrer nofollow" href="http://parts.igem.org/Part:BBa_K4227002">K4227002</a></h1></td><td colspan="1" rowspan="1"><h1>Monellin</h1></td><td colspan="1" rowspan="1"><h1>294 bp</h1></td><td colspan="1" rowspan="1"><h1>coding</h1></td></tr><tr><td colspan="1" rowspan="1"><h1><a target="_blank" rel="noopener noreferrer nofollow" href="http://parts.igem.org/Part:BBa_K4227003">K4227003</a></h1></td><td colspan="1" rowspan="1"><h1>xip-TP</h1></td><td colspan="1" rowspan="1"><h1>87 bp</h1></td><td colspan="1" rowspan="1"><h1>coding</h1></td></tr><tr><td colspan="1" rowspan="1"><h1><a target="_blank" rel="noopener noreferrer nofollow" href="http://parts.igem.org/Part:BBa_K4227005">K4227005</a></h1></td><td colspan="1" rowspan="1"><h1>xip-P34</h1></td><td colspan="1" rowspan="1"><h1>27 bp</h1></td><td colspan="1" rowspan="1"><h1>coding</h1></td></tr><tr><td colspan="1" rowspan="1"><h1><a target="_blank" rel="noopener noreferrer nofollow" href="http://parts.igem.org/Part:BBa_K4227006">K4227006</a></h1></td><td colspan="1" rowspan="1"><h1>P<sub>nlmC</sub>-site+</h1></td><td colspan="1" rowspan="1"><h1>154 bp</h1></td><td colspan="1" rowspan="1"><h1>regulatory</h1></td></tr><tr><td colspan="1" rowspan="1"><h1><a target="_blank" rel="noopener noreferrer nofollow" href="http://parts.igem.org/Part:BBa_K4227007">K4227007</a></h1></td><td colspan="1" rowspan="1"><h1>P<sub>nlmC</sub>-site-</h1></td><td colspan="1" rowspan="1"><h1>108 bp</h1></td><td colspan="1" rowspan="1"><h1>regulatory</h1></td></tr></Tablegotool></table-pro><h1></h1><!-- iGEMGotool contact1 end-->    <ol type="1">
-      <li>Coffee</li>
-      <li>Tea</li>
-      <li>Milk</li>
-    </ol>
-    <ol type="A">
-      <li>Coffee</li>
-      <li>Tea</li>
-      <li>Milk</li>
-    </ol>
-    <ol type="a">
-      <li>Coffee</li>
-      <li>Tea</li>
-      <li>Milk</li>
-    </ol>
-    <ol type="I">
-      <li>Coffee</li>
-      <li>Tea</li>
-      <li>Milk</li>
-    </ol>
-    <ol type="i">
-      <li>Coffee</li>
-      <li>Tea</li>
-      <li>Milk</li>
-    </ol>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan,
-      metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum
-      justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio,
-      sollicitudin vel erat vel, interdum mattis neque.
-    </p>
-    <h2>Second level</h2>
-    <p>
-      Curabitur accumsan turpis pharetra
-      <strong>augue tincidunt</strong> blandit. Quisque condimentum maximus mi,
-      sit amet commodo arcu rutrum id. Proin pretium urna vel cursus venenatis.
-      Suspendisse potenti. Etiam mattis sem rhoncus lacus dapibus facilisis.
-      Donec at dignissim dui. Ut et neque nisl.
-    </p>
-    <ul>
-      <li>In fermentum leo eu lectus mollis, quis dictum mi aliquet.</li>
-      <li>Morbi eu nulla lobortis, lobortis est in, fringilla felis.</li>
-      <li>
-        Aliquam nec felis in sapien venenatis viverra fermentum nec lectus.
-      </li>
-      <li>Ut non enim metus.</li>
-    </ul>
+  <div class="content is-large">
+    <!-- WikiBreeze contact1 start--><h1 style="text-align: start"><strong>Hello World</strong></h1><p style="text-align: start">Lorem ipsum<sup>[1]</sup> dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque. Sub<sub>script</sub> works as well!</p><table-pro><table><tr><th colspan="1" rowspan="1"><p>One</p></th><th colspan="1" rowspan="1"><p>Two</p></th></tr><tr><td colspan="1" rowspan="1"><p>Three</p></td><td colspan="1" rowspan="1"><p>Four</p></td></tr><tr><td colspan="1" rowspan="1"><p>Five</p></td><td colspan="1" rowspan="1"><p>Six</p></td></tr><tr><td colspan="1" rowspan="1"><p>Seven</p></td><td colspan="1" rowspan="1"><p>Eight</p></td></tr><tr><td colspan="1" rowspan="1"><p>Nine</p></td><td colspan="1" rowspan="1"><p>Ten</p></td></tr><tr><td colspan="1" rowspan="1"><p>Eleven</p></td><td colspan="1" rowspan="1"><p>Twelve</p></td></tr></table><p><strong>Fig 1.</strong> add table note here</p></table-pro><p style="text-align: start"></p><h2 style="text-align: start"><strong>Second level</strong></h2><p style="text-align: start">Curabitur accumsan turpis pharetra <strong>augue tincidunt</strong> blandit. Quisque condimentum maximus mi, sit amet commodo arcu rutrum id. Proin pretium urna vel cursus venenatis. Suspendisse potenti. Etiam mattis sem rhoncus lacus dapibus facilisis. Donec at dignissim dui. Ut et neque nisl.</p><ul><li><p>In fermentum leo eu lectus mollis, quis dictum mi aliquet.</p></li><li><p>Morbi eu nulla lobortis, lobortis est in, fringilla felis.</p></li><li><p>Aliquam nec felis in sapien venenatis viverra fermentum nec lectus.</p></li><li><p>Ut non enim metus.</p></li></ul><h3 style="text-align: start"><strong>Third level</strong></h3><p style="text-align: start">Quisque ante lacus, malesuada ac auctor vitae, congue <a target="_blank" rel="noopener noreferrer nofollow" href="http://localhost:5173/about#">non ante</a>. Phasellus lacus ex, semper ac tortor nec, fringilla condimentum orci. Fusce eu rutrum tellus.</p><ul><li><p>Donec blandit a lorem id convallis.</p></li><li><p>Cras gravida arcu at diam gravida gravida.</p></li><li><p>Integer in volutpat libero.</p></li><li><p>Donec a diam tellus.</p></li><li><p>Aenean nec tortor orci.</p></li><li><p>Quisque aliquam cursus urna, non bibendum massa viverra eget.</p></li><li><p>Vivamus maximus ultricies pulvinar.</p></li></ul><p>Ut venenatis, nisl scelerisque sollicitudin fermentum, quam libero hendrerit ipsum, ut blandit est tellus sit amet turpis.</p><p style="text-align: start">Quisque at semper enim, eu hendrerit odio. Etiam auctor nisl et <em>justo sodales</em> elementum. Maecenas ultrices lacus quis neque consectetur, et lobortis nisi molestie.</p><p style="text-align: start">Sed sagittis enim ac tortor maximus rutrum. Nulla facilisi. Donec mattis vulputate risus in luctus. Maecenas vestibulum interdum commodo.</p><p>Web</p><p>The part of the Internet that contains websites and web pages</p><p>HTML</p><p>A markup language for creating web pages</p><p>CSS</p><p>A technology to make HTML look better</p><p style="text-align: start">Suspendisse egestas sapien non felis placerat elementum. Morbi tortor nisl, suscipit sed mi sit amet, mollis malesuada nulla. Nulla facilisi. Nullam ac erat ante.</p><h4 style="text-align: start"><strong>Fourth level</strong></h4><p style="text-align: start">Nulla efficitur eleifend nisi, sit amet bibendum sapien fringilla ac. Mauris euismod metus a tellus laoreet, at elementum ex efficitur.</p><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Hello World&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra nec nulla vitae mollis.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p style="text-align: start">Maecenas eleifend sollicitudin dui, faucibus sollicitudin augue cursus non. Ut finibus eleifend arcu ut vehicula. Mauris eu est maximus est porta condimentum in eu justo. Nulla id iaculis sapien.</p><table><tr><th colspan="1" rowspan="1"><p>One</p></th><th colspan="1" rowspan="1"><p>Two</p></th></tr><tr><td colspan="1" rowspan="1"><p>Three</p></td><td colspan="1" rowspan="1"><p>Four</p></td></tr><tr><td colspan="1" rowspan="1"><p>Five</p></td><td colspan="1" rowspan="1"><p>Six</p></td></tr><tr><td colspan="1" rowspan="1"><p>Seven</p></td><td colspan="1" rowspan="1"><p>Eight</p></td></tr><tr><td colspan="1" rowspan="1"><p>Nine</p></td><td colspan="1" rowspan="1"><p>Ten</p></td></tr><tr><td colspan="1" rowspan="1"><p>Eleven</p></td><td colspan="1" rowspan="1"><p>Twelve</p></td></tr></table><p style="text-align: start">Phasellus porttitor enim id metus volutpat ultricies. Ut nisi nunc, blandit sed dapibus at, vestibulum in felis. Etiam iaculis lorem ac nibh bibendum rhoncus. Nam interdum efficitur ligula sit amet ullamcorper. Etiam tristique, leo vitae porta faucibus, mi lacus laoreet metus, at cursus leo est vel tellus. Sed ac posuere est. Nunc ultricies nunc neque, vitae ultricies ex sodales quis. Aliquam eu nibh in libero accumsan pulvinar. Nullam nec nisl placerat, pretium metus vel, euismod ipsum. Proin tempor cursus nisl vel condimentum. Nam pharetra varius metus non pellentesque.</p><h5 style="text-align: start"><strong>Fifth level</strong></h5><p style="text-align: start">Aliquam sagittis rhoncus vulputate. Cras non luctus sem, sed tincidunt ligula. Vestibulum at nunc elit. Praesent aliquet ligula mi, in luctus elit volutpat porta. Phasellus molestie diam vel nisi sodales, a eleifend augue laoreet. Sed nec eleifend justo. Nam et sollicitudin odio.</p><img src="https://bulma.io/images/placeholders/256x256.png"><img src="https://bulma.io/images/placeholders/256x256.png"><p><em>Figure 1: Some beautiful placeholders</em></p><h6 style="text-align: start"><strong>Sixth level</strong></h6><p style="text-align: start">Cras in nibh lacinia, venenatis nisi et, auctor urna. Donec pulvinar lacus sed diam dignissim, ut eleifend eros accumsan. Phasellus non tortor eros. Ut sed rutrum lacus. Etiam purus nunc, scelerisque quis enim vitae, malesuada ultrices turpis. Nunc vitae maximus purus, nec consectetur dui. Suspendisse euismod, elit vel rutrum commodo, ipsum tortor maximus dui, sed varius sapien odio vitae est. Etiam at cursus metus.</p><!-- WikiBreeze contact1 end-->
   </div>
 </template>
 <script setup lang="ts">
-import Tablegotool from "@/components/Tablegotool.vue";
+import tablePro from "@/components/TablePro.vue";
 </script>
 <style lang="scss" scoped></style>
