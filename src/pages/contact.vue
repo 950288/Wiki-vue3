@@ -16,5 +16,8 @@ fib(6); // [1, 1, 2, 3, 5, 8]</code></pre><p>Hope you enjoy WikiBreeze !</p><pre
 </template>
 <script setup lang="ts">
 import tablePro from "@/components/TablePro.vue";
+import hljs from 'highlight.js';
+import 'highlight.js/styles/github.css';
+hljs.highlightAll();
 </script>
 <style lang="scss" scoped></style>

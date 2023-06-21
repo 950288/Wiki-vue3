@@ -24,6 +24,7 @@ import SideBar from "@/components/SideBar.vue";
 import SideBarMd from "@/components/SideBarMd.vue";
 import { useRoute } from 'vue-router'
 import routes  from "@/routes";
+
 const route = useRoute()
 const toggleSidebar = ref(false);
 const root_bg = ref("root-bg");
