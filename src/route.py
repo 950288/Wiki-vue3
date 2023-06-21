@@ -14,7 +14,7 @@ def generate_route_ts(json_file):
         component_file = f"@/pages/{component_name.lower()}.vue"
         imports.append(f'import {component_name} from "{component_file}";')
         components.append({
-            "component": component_name,
+            "component": "() => import('@/pages/"+component_name.lower()+".vue')",
             "name": route['name'],
             "path": '/vue3' + route['path']
         })
@@ -22,7 +22,8 @@ def generate_route_ts(json_file):
     imports_str = '\n'.join(imports)
     components_str = ',\n        '.join([f"{{component: {component['component']}, name: '{component['name']}', path: '{component['path']}'}}" for component in components])
 
-    route_ts = f'''{imports_str}
+    # route_ts = f'''{imports_str}
+    route_ts = f'''
 
 export const routes = [
     {components_str}
