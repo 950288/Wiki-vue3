@@ -2,12 +2,14 @@
   "name": "vue3-ts",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",
     "preview": "vite preview",
     "test:unit": "vitest --environment jsdom --root src/",
-    "build-only": "vite build",
+    "build-only": "vite build && node multiple-pages.js",
+    "multiple-pages": "node multiple-pages.js",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
@@ -29,6 +31,7 @@
     "@vueuse/core": "^10.1.0",
     "bulma": "^0.9.4",
     "highlight.js": "^11.8.0",
+    "ncp": "^2.0.0",
     "sass": "^1.62.1",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6",
