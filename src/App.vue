@@ -7,7 +7,7 @@
     <div class="detect col-md-0" ref="detectInMD">
       1
     </div>
-    <!-- <div class="main col-22 col-lg-23 col-md-24 offset-md-0 row"> -->
+    <Header />
     <div class="col-24 row">
       <SideBar class="col-md-0" :class="[{ 'col-1': !toggleSidebar }, { 'col-3': toggleSidebar }]" v-show="inMD"
         @toggle-sidebar="toggleSidebar = toggleSidebar ? false : true" />
@@ -25,6 +25,7 @@ import SideBar from "@/components/SideBar.vue";
 import SideBarMd from "@/components/SideBarMd.vue";
 import { useRoute } from 'vue-router'
 import routes  from "@/routes";
+import Header from "@/components/header.vue";
 
 const route = useRoute()
 const toggleSidebar = ref(false);

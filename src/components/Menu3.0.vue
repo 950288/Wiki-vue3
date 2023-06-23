@@ -48,8 +48,6 @@ const indicator_W = ref<number>(0);
 const drift_X = ref<number>(0);
 const drift_W = ref<number>(0);
 const current_pg_index = computed(() => {
-  // console.log(router.currentRoute.value.name);
-  // console.log(props.routes.findIndex(route => route.name === router.currentRoute.value.name));
   return props.routes.findIndex(
     (route) => route.name === router.currentRoute.value.name
   );
@@ -62,7 +60,9 @@ function back_position() {
 
 onMounted(() => {
   watch(proxy.onresize, () => {
-    back_position();
+    setTimeout(() => {
+      back_position();
+    }, 20);
   });
   watch(y, () => {
     if (y.value > 1) {
@@ -76,7 +76,6 @@ onMounted(() => {
     }
   });
   watch([router.currentRoute, float], () => {
-    // console.log("watch");
     back_position();
   });
 });
