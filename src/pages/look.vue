@@ -105,7 +105,8 @@
   </div>
 </template>
 <script setup lang="ts">
-import apexchart from 'vue3-apexcharts';
+import { defineAsyncComponent } from 'vue';
+const apexchart = defineAsyncComponent(() => import('vue3-apexcharts'));
 import { themeMode } from "@/main";
 import { nextTick, watch, ref } from 'vue';
 const renderComponent = ref(true);
