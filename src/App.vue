@@ -14,6 +14,7 @@
       <router-view :root_bg="root_bg" class="col-md-24"
         :class="[{ 'col-20 offset-1 col-lg-21': !toggleSidebar }, { 'col-20': toggleSidebar }]" />
     </div>
+    <Footer />
   </div>
 </template>
 
@@ -26,6 +27,7 @@ import SideBarMd from "@/components/SideBarMd.vue";
 import { useRoute } from 'vue-router'
 import routes  from "@/routes";
 import Header from "@/components/header.vue";
+import Footer from "@/components/footer.vue";
 
 const route = useRoute()
 const toggleSidebar = ref(false);
@@ -74,6 +76,7 @@ onMounted(() => {
 .content {
   box-sizing: border-box;
   margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   padding: 0.5rem;
 
   // display: flex;
