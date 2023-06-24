@@ -3,7 +3,7 @@ import App from "./App.vue";
 
 import { createRouter, createWebHistory } from "vue-router";
 import { useColorMode } from "@vueuse/core";
-import routes  from "@/routes";
+import {routes}  from "@/routes";
 
 console.log(routes);
 

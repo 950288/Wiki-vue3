@@ -19,13 +19,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onUpdated, onMounted, nextTick, inject, getCurrentInstance ,watch } from "vue";
+import { ref, onUpdated, onMounted, nextTick, inject, getCurrentInstance, watch } from "vue";
 import Menu from "@/components/Menu3.0.vue";
 import MenuMd from "@/components/MenuMd.vue";
 import SideBar from "@/components/SideBar.vue";
 import SideBarMd from "@/components/SideBarMd.vue";
 import { useRoute } from 'vue-router'
-import routes  from "@/routes";
+import { routes } from "@/routes";
 import Header from "@/components/header.vue";
 import Footer from "@/components/footer.vue";
 
@@ -38,7 +38,7 @@ const Headers = ref()
 const { proxy } = <any>getCurrentInstance();
 
 onMounted(() => {
-  watch(proxy.onresize , () => {
+  watch(proxy.onresize, () => {
     inMD.value = detectInMD.value.offsetWidth > 0;
   });
   inMD.value = detectInMD.value.offsetWidth > 0;
@@ -73,6 +73,7 @@ onMounted(() => {
   margin: 0;
   padding: 0;
 }
+
 .content {
   box-sizing: border-box;
   margin-top: 1.5rem;
@@ -82,6 +83,7 @@ onMounted(() => {
   // display: flex;
   // flex-wrap: wrap;
 }
+
 @media (max-width: 768px) {
   .content {
     margin: 0rem;

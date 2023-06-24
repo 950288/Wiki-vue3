@@ -3,18 +3,30 @@
     <div :class="`ribbon  ${float}`"></div>
     <ul class="nav-items col-md-22 col-20">
       <div :class="`indicator   ${float}`" :style="{
-          left: `${indicator_X}px`,
-          width: `${indicator_W}px`,
-        }"></div>
+        left: `${indicator_X}px`,
+        width: `${indicator_W}px`,
+      }"></div>
       <li>
-        <Logo :class="`nav-item`" />
+        <Logo class="nav-item" />
 
       </li>
-      <li v-for="(route, index) in routes" :key="route.name" :class="`nav-item`"
+      <!-- <li v-for="(heading, index) in headings" :key="index" :class="`nav-item`"
         @mouseenter="handleMouseEnter(route.name, index)" @mouseleave="handleMouseLeave(index)" ref="pages">
         <router-link :to="route.path" class="nav-link">{{
           route.name
         }}</router-link>
+      </li> -->
+      <li v-for="(heading, index) in headings" :key="index" class="nav-item" ref="pages">
+        <div v-if="heading != ''" class="nav-link toggle" @mouseenter="handleMouseEnter(index)"
+          @mouseleave="handleMouseLeave()">{{
+            index
+          }}
+        </div>
+        <router-link v-if="heading == ''" :to="'/vue3/' + (index == 'Home' ? '' : index.toLowerCase())" class="nav-link"
+          @mouseenter="handleMouseEnter(index)" @mouseleave="handleMouseLeave()">{{
+            index
+          }}</router-link>
+        <!-- {{  }} -->
       </li>
       <li :class="`switcher`">
         <ThemeButton />
@@ -27,8 +39,9 @@
 import Logo from "./logo.vue";
 import { getCurrentInstance, type Ref } from "vue";
 import { ref, computed, onMounted, watch } from "vue";
-import type { NavItem } from "@/interface";
+// import type { NavItem } from "@/interface";
 import ThemeButton from "@/components/theme-button.vue";
+import { headings } from "@/routes";
 import { router } from "@/main";
 import { useWindowScroll } from "@vueuse/core";
 const { proxy } = <any>getCurrentInstance();
@@ -38,7 +51,7 @@ const { x, y } = useWindowScroll();
 const float = ref<string>("");
 const props = defineProps({
   routes: {
-    type: Array as () => NavItem[],
+    type: Array as () => any[],
     required: true,
   },
 });
@@ -47,15 +60,32 @@ const indicator_X = ref<number>(0);
 const indicator_W = ref<number>(0);
 const drift_X = ref<number>(0);
 const drift_W = ref<number>(0);
+
+const keymap = {}
+
+let index = 0;
+for (let key in headings) {
+  if (headings[key] != "") {
+    keymap[key] = index;
+    for (let key2 in headings[key]) {
+      keymap[key2] = index;
+    }
+  } else {
+    keymap[key] = index;
+  }
+  index++;
+}
+
+console.log(keymap);
+
 const current_pg_index = computed(() => {
-  return props.routes.findIndex(
-    (route) => route.name === router.currentRoute.value.name
-  );
+  return keymap[router.currentRoute.value.name];
 });
 function back_position() {
   console.log("back_position");
-  indicator_X.value = pages.value[current_pg_index.value]["offsetLeft"];
-  indicator_W.value = pages.value[current_pg_index.value]["offsetWidth"];
+  console.log(pages.value);
+  indicator_X.value = pages.value[keymap[router.currentRoute.value.name]]["offsetLeft"];
+  indicator_W.value = pages.value[keymap[router.currentRoute.value.name]]["offsetWidth"];
 }
 
 onMounted(() => {
@@ -83,23 +113,22 @@ onMounted(() => {
 const currentItem = ref("home") as Ref<string>;
 // const  = ref(null)
 
-function handleMouseEnter(item: string, pageindex: number) {
-  currentItem.value = item;
-  // console.log(pages)
-  // console.log(currentItem.value);
-  indicator_X.value = pages.value[pageindex]["offsetLeft"];
-  indicator_W.value = pages.value[pageindex]["offsetWidth"];
+function handleMouseEnter(index: string) {
+  currentItem.value = index;
+  console.log(index);
+  indicator_X.value = pages.value[keymap[index]]["offsetLeft"];
+  indicator_W.value = pages.value[keymap[index]]["offsetWidth"];
 }
 
-function handleMouseLeave(pageindex: number) {
-  if (typeof router.currentRoute.value.name == "string") {
-    currentItem.value = router.currentRoute.value.name;
-    // console.log(currentItem.value);
-    // console.log(current_pg_index.value);
-    back_position();
-  } else {
-    currentItem.value = "home";
-  }
+function handleMouseLeave() {
+  // if (typeof router.currentRoute.value.name == "string") {
+  //   currentItem.value = router.currentRoute.value.name;
+  //   // console.log(currentItem.value);
+  //   // console.log(current_pg_index.value);
+  back_position();
+  // } else {
+  //   currentItem.value = "home";
+  // }
 }
 </script>
 
@@ -156,6 +185,18 @@ function handleMouseLeave(pageindex: number) {
   transition: margin 0.2s ease;
 }
 
+.nav-link.toggle::after {
+  content: "";
+  display: inline-block;
+  margin-left: 0.355em;
+  vertical-align: 0.15em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+}
+
 .nav-link {
   display: block;
   padding: 0 20px;
@@ -181,6 +222,7 @@ function handleMouseLeave(pageindex: number) {
 html.dark .indicator {
   --color-indicator: rgb(48, 48, 48);
 }
+
 html .indicator {
   --color-indicator: rgb(99, 99, 234);
 }
