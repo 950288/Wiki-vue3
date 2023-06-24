@@ -176,6 +176,7 @@ function handleMouseLeave() {
   list-style: none;
   margin: 0 auto 0 auto;
   padding: 0;
+  height: 60px;
 }
 
 .nav-item {
@@ -192,6 +193,7 @@ function handleMouseLeave() {
   position: relative;
   padding: 10px 0px 10px 5px;
   transition: margin 0.2s ease;
+  height: 60;
 }
 
 .nav-link.toggle::after {
