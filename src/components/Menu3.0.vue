@@ -22,6 +22,15 @@
             index
           }}
         </div>
+        <ul v-if="heading != ''" class="nav-items-2">
+          <li v-for="(_, index) in heading" :key="index" :class="`nav-item-2`" @mouseenter="handleMouseEnter(index)"
+            @mouseleave="handleMouseLeave()">
+            <router-link :to="'/vue3/' + index.toLowerCase()" class="nav-link-2">{{
+              index
+            }}
+            </router-link>
+          </li>
+        </ul>
         <router-link v-if="heading == ''" :to="'/vue3/' + (index == 'Home' ? '' : index.toLowerCase())" class="nav-link"
           @mouseenter="handleMouseEnter(index)" @mouseleave="handleMouseLeave()">{{
             index
@@ -204,6 +213,59 @@ function handleMouseLeave() {
   text-decoration: none;
   font-size: 18px;
   line-height: 60px;
+}
+
+.nav-item:hover {
+  .nav-items-2 {
+    display: block;
+  }
+}
+
+.nav-items-2 {
+  display: none;
+  position: absolute;
+  top: calc(100% - 10px);
+  left: 0;
+  // min-width: 10rem;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-radius: 0.25rem;
+}
+
+.nav-item-2:hover {
+  background-color: #f8f9fa;
+}
+
+.nav-item-2 {
+  display: block;
+  padding: 0.25rem 1rem;
+  clear: both;
+  font-weight: 400;
+  color: #212529;
+  text-align: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0.25rem;
+
+  .nav-link-2 {
+    width: 100%;
+    display: block;
+    padding: 0 2px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    color: #212529;
+    border-radius: 0.25rem;
+  }
 }
 
 .indicator {
