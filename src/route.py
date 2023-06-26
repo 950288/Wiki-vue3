@@ -24,7 +24,7 @@ def generate_route_ts(json_file):
             if component_name == "Home":
                 path = ""
             else:
-                path = component_name.lower()
+                path = component_name.lower().replace(" ", "-")
             components.append({
                 "component": "() => import('@/pages/"+component_name.lower()+".vue')",
                 "name": component_name,
@@ -36,7 +36,7 @@ def generate_route_ts(json_file):
                 components.append({
                     "component": "() => import('@/pages/"+component_name.lower()+".vue')",
                     "name": component_name,
-                    "path": '/vue3/' + key_2.lower()
+                    "path": '/vue3/' + key_2.lower().replace(" ", "-")
                 })
     
     components_str = ',\n\t'.join([f"{{component: {component['component']}, name: '{component['name']}', path: '{component['path']}'}}" for component in components])

@@ -17,6 +17,7 @@ for (let key in routes) {
 }
 
 function copyFile(filename) {
+  filename = filename.toLowerCase().replace(' ', "-");
   ncp('./dist/index.html', `./dist/${filename}`, err => {
     if (err) return console.error(err);
     console.log(`Copied index.html to /dist/${filename} !`);

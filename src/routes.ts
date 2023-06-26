@@ -12,7 +12,7 @@ export const routes = [
 	{component: () => import('@/pages/results.vue'), name: 'Results', path: '/vue3/results'},
 	{component: () => import('@/pages/safety.vue'), name: 'Safety', path: '/vue3/safety'},
 	{component: () => import('@/pages/software.vue'), name: 'Software', path: '/vue3/software'},
-	{component: () => import('@/pages/human practices.vue'), name: 'Human Practices', path: '/vue3/human practices'},
+	{component: () => import('@/pages/human practices.vue'), name: 'Human Practices', path: '/vue3/human-practices'},
 	{component: () => import('@/pages/education.vue'), name: 'Education', path: '/vue3/education'},
 	{component: () => import('@/pages/model.vue'), name: 'Model', path: '/vue3/model'}
 ]

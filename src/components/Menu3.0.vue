@@ -25,13 +25,13 @@
         <ul v-if="heading != ''" class="nav-items-2">
           <li v-for="(_, index) in heading" :key="index" :class="`nav-item-2`" @mouseenter="handleMouseEnter(index)"
             @mouseleave="handleMouseLeave()">
-            <router-link :to="'/vue3/' + index.toLowerCase()" class="nav-link-2">{{
+            <router-link :to="'/vue3/' + index.toLowerCase().replace(' ','-')" class="nav-link-2">{{
               index
             }}
             </router-link>
           </li>
         </ul>
-        <router-link v-if="heading == ''" :to="'/vue3/' + (index == 'Home' ? '' : index.toLowerCase())" class="nav-link"
+        <router-link v-if="heading == ''" :to="'/vue3/' + (index == 'Home' ? '' : index.toLowerCase().replace(' ','-'))" class="nav-link"
           @mouseenter="handleMouseEnter(index)" @mouseleave="handleMouseLeave()">{{
             index
           }}</router-link>
