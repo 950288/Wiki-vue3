@@ -5,6 +5,12 @@ import { createRouter, createWebHistory } from "vue-router";
 import { useColorMode } from "@vueuse/core";
 import {routes}  from "@/routes";
 
+routes.push({
+  path: "/:pathMatch(.*)*",
+  redirect: "/vue3/",
+});
+
+
 console.log(routes);
 
 export const themeMode = useColorMode();
@@ -16,12 +22,15 @@ export const router = createRouter({
 
 const app = createApp(App);
 
+app.config.globalProperties.loading = ref(false);
 router.afterEach((to, from) => {
+  app.config.globalProperties.loading.value = false;
   nextTick(() => {
-    // const headingList = ref("globalRef")
-    // app.config.globalProperties.headingList = headingList;
     getHeaders();
   });
+});
+router.beforeEach((to, from) => {
+  app.config.globalProperties.loading.value = true;
 });
 app.config.globalProperties.headingList = ref();
 app.config.globalProperties.onresize = ref(1);

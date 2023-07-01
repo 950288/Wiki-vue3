@@ -6,7 +6,7 @@ const routes = JSON.parse(fs.readFileSync("./src/heading.json"));
 console.log(routes);
 
 for (let key in routes) {
-  if (key === "Home") continue;
+  // if (key === "Home") continue;
   if (routes[key] == "") {
     copyFile(key);
   } else {

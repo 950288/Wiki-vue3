@@ -1,4 +1,5 @@
 <template>
+  <progress_bar />
   <!-- <Menu :routes="routes" v-show="inMD" /> -->
   <Menu :routes="routes" v-show="true" />
   <!-- <MenuMd :routes="routes" v-show="!inMD" /> -->
@@ -20,6 +21,7 @@
 
 <script setup lang="ts">
 import { ref, onUpdated, onMounted, nextTick, inject, getCurrentInstance, watch } from "vue";
+import progress_bar from "@/components/progress.vue";
 import Menu from "@/components/Menu3.0.vue";
 import MenuMd from "@/components/MenuMd.vue";
 import SideBar from "@/components/SideBar.vue";
@@ -42,7 +44,7 @@ onMounted(() => {
     inMD.value = detectInMD.value.offsetWidth > 0;
   });
   inMD.value = detectInMD.value.offsetWidth > 0;
-  console.log(detectInMD.value.offsetWidth);
+  console.log("onmounted");
 
 });
 
@@ -89,5 +91,15 @@ onMounted(() => {
     margin: 0rem;
     border-radius: 0px;
   }
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+  opacity: 0;
 }
 </style>

@@ -5,7 +5,6 @@
       2022-12-25 22:05:14
     </p>
     <div id="chart">
-
       <!-- iGEMGotool look1 start-->
       <h1>iGEMGoTool （<a target="_blank" rel="noopener noreferrer nofollow"
           href="https://github.com/950288/iGEMGoTool/blob/main/README_zh.md">简体中文</a>）🛠️</h1>
@@ -21,13 +20,15 @@
       <ul>
         <li>
           <p>Download the latest version of the <code>iGEMGoTool</code> zip archive, put the Unziped
-            <code>iGEMGoTool</code> folder into the root directory of your project.</p>
+            <code>iGEMGoTool</code> folder into the root directory of your project.
+          </p>
         </li>
         <li>
           <p>Insert the following special tag into your <code>.html</code> file or other custom file type for each
             section that you want to edit: <code>&lt;!-- iGEMGoTool {{ name }} start--&gt;</code>. Replace
             <code>{{ name }}</code> with the The custom name for this section.(Note: A page can contain multiple tags and
-            each tag corresponds to a section that can be edited individually.)</p>
+            each tag corresponds to a section that can be edited individually.)
+          </p>
         </li>
       </ul>
       <pre><code>&lt;div&gt; &lt;!-- iGEMGotool test1 start--&gt; &lt;/div&gt;</code></pre>
@@ -105,8 +106,12 @@
   </div>
 </template>
 <script setup lang="ts">
+import loading from "@/components/loadingBlock.vue";
 import { defineAsyncComponent } from 'vue';
-const apexchart = defineAsyncComponent(() => import('vue3-apexcharts'));
+const apexchart = defineAsyncComponent({
+  loader: () => import('vue3-apexcharts'),
+  loadingComponent: loading
+});
 import { themeMode } from "@/main";
 import { nextTick, watch, ref } from 'vue';
 const renderComponent = ref(true);
