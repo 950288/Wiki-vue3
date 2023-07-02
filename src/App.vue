@@ -52,17 +52,11 @@ onMounted(() => {
 <style lang="scss">
 @import "@/style/index.scss";
 
-// @include set-color-mode(light);
 * {
   margin: 0;
   padding: 0;
-  // background-color: var(--has-background-success);
 }
 
-.main {
-  // background: #000;
-  // margin: 0 auto;
-}
 
 :root {
   background-color: var(--bg-base);
@@ -80,10 +74,12 @@ onMounted(() => {
   box-sizing: border-box;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-  padding: 0.5rem;
+  padding: 1.5rem;
 
-  // display: flex;
-  // flex-wrap: wrap;
+  img{
+    width: 70%;
+    margin-left: 15%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -93,13 +89,20 @@ onMounted(() => {
   }
 }
 
-.slide-enter-active,
-.slide-leave-active {
-  transition: opacity 0.5s ease;
+/* This code adds a horizontal rule to the bottom of all h2 elements. */
+h2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background-color: #666;
+  margin-top: 0;
+  opacity: .25;
+  margin-bottom: 0;
 }
 
-.slide-enter-from,
-.slide-leave-to {
-  opacity: 0;
+
+hr{
+  display: none;
 }
 </style>

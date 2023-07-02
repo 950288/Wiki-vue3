@@ -1,0 +1,401 @@
+{
+    "content": [
+        {
+            "attrs": {
+                "level": 2,
+                "textAlign": "left"
+            },
+            "content": [
+                {
+                    "text": "Project Background",
+                    "type": "text"
+                }
+            ],
+            "type": "heading"
+        },
+        {
+            "attrs": {
+                "class": null,
+                "textAlign": "left"
+            },
+            "content": [
+                {
+                    "text": "PET, also known as polyethylene terephthalate, is a type of plastic commonly used to make beverage bottles, food containers and other consumer goods. Although PET is convenient, the harm it brings to the environment is also worth noting. PET accounts for 12% of the world's solid waste. Theoretically, PET can be degraded into monomers through rapid enzymatic hydrolysis, and then re-polymerized or converted / added value to other products to achieve a circular carbon economy of PET.",
+                    "type": "text"
+                }
+            ],
+            "type": "paragraph"
+        },
+        {
+            "attrs": {
+                "class": null,
+                "textAlign": "left"
+            },
+            "content": [
+                {
+                    "text": "In 2005, enzymes that can degrade PET were first reported, and 19 different PET hydrolytic enzymes (PHEs) have been preliminarily proven. However, most of these enzymes can only show obvious hydrolytic activity at high reaction temperatures and highly processed substrates. Most other PET hydrolytic enzymes have poor activity under moderate temperature and neutral pH conditions. This greatly limits the in situ / microbial degradation solutions for PET waste.",
+                    "type": "text"
+                }
+            ],
+            "type": "paragraph"
+        },
+        {
+            "attrs": {
+                "class": null,
+                "textAlign": "left"
+            },
+            "content": [
+                {
+                    "text": "Recently, a study published in Nature, a research team from the University of Texas at Austin designed a powerful and highly active hydrolytic enzyme that can decompose plastics that usually take centuries to degrade in 24 hours through machine learning algorithms. On the basis of PETase, the team obtained an optimal mutant through engineering modifications and tests, named FAST-PETase (functional, active, stable and tolerant PETase).  ",
+                    "type": "text"
+                }
+            ],
+            "type": "paragraph"
+        },
+        {
+            "attrs": {
+                "class": null,
+                "textAlign": "left"
+            },
+            "content": [
+                {
+                    "text": "At the same time, through directed evolution, a new enzyme variant DepoPETase with PET degradation ability similar to FAST-PETase was produced, so it was also included in our consideration.",
+                    "type": "text"
+                }
+            ],
+            "type": "paragraph"
+        },
+        {
+            "attrs": {
+                "class": null,
+                "textAlign": "left"
+            },
+            "content": [
+                {
+                    "text": "The project plans to design a microbial system based on FAST-PETase or DepoPETase to decompose PET in the environment to benefit humanity.",
+                    "type": "text"
+                }
+            ],
+            "type": "paragraph"
+        },
+        {
+            "attrs": {
+                "level": 2,
+                "textAlign": "left"
+            },
+            "content": [
+                {
+                    "text": "PET Degradation",
+                    "type": "text"
+                }
+            ],
+            "type": "heading"
+        },
+        {
+            "attrs": {
+                "class": null,
+                "textAlign": "left"
+            },
+            "content": [
+                {
+                    "text": "With the joint action of PETase and MHETase, PET will decompose into TPA (terephthalic acid).",
+                    "type": "text"
+                }
+            ],
+            "type": "paragraph"
+        },
+        {
+            "attrs": {
+                "level": 2,
+                "textAlign": "left"
+            },
+            "content": [
+                {
+                    "text": "Main Modules",
+                    "type": "text"
+                }
+            ],
+            "type": "heading"
+        },
+        {
+            "attrs": {
+                "class": null,
+                "textAlign": "left"
+            },
+            "content": [
+                {
+                    "text": "We choose ",
+                    "type": "text"
+                },
+                {
+                    "marks": [
+                        {
+                            "type": "italic"
+                        }
+                    ],
+                    "text": "Bacillus subtilis",
+                    "type": "text"
+                },
+                {
+                    "text": " as the chassis organism. ",
+                    "type": "text"
+                }
+            ],
+            "type": "paragraph"
+        },
+        {
+            "attrs": {
+                "level": 3,
+                "textAlign": "left"
+            },
+            "content": [
+                {
+                    "text": "PET Degradation Module (Core Module)",
+                    "type": "text"
+                }
+            ],
+            "type": "heading"
+        },
+        {
+            "attrs": {
+                "class": null,
+                "textAlign": "left"
+            },
+            "content": [
+                {
+                    "text": "This module is responsible for expressing the synthesis of downstream PET-degrading enzymes PETase and MHETase. These four enzymes (two more not shown in the figure) can degrade PET into PCA, which eventually enters the tricarboxylic acid cycle as a carbon source.",
+                    "type": "text"
+                }
+            ],
+            "type": "paragraph"
+        },
+        {
+            "attrs": {
+                "alt": null,
+                "src": "https://static.igem.wiki/teams/4591/wiki/wiki/fast.png",
+                "title": null
+            },
+            "type": "image"
+        },
+        {
+            "attrs": {
+                "class": null,
+                "textAlign": "left"
+            },
+            "content": [
+                {
+                    "text": "The expression of related genes in this module is controlled by the constitutive promoter P43. In addition, we plan to add a signal peptide SPamy in front of the two plastic degrading enzymes to increase the expression and secretion of the two plastic degrading enzymes.",
+                    "type": "text"
+                }
+            ],
+            "type": "paragraph"
+        },
+        {
+            "attrs": {
+                "level": 3,
+                "textAlign": "left"
+            },
+            "content": [
+                {
+                    "text": "Reporting  Module  ",
+                    "type": "text"
+                }
+            ],
+            "type": "heading"
+        },
+        {
+            "attrs": {
+                "class": null,
+                "textAlign": "left"
+            },
+            "content": [
+                {
+                    "text": "XylS is a mixotrophic transcription factor from Pseudomonas putida that can bind benzoate and various derivatives but cannot recognize PA and TPA. This mutant XylS can be used to construct a biosensor for PA and TPA detection to detect the presence of TPA and activate the corresponding module (regulated by promoter Pm).",
+                    "type": "text"
+                }
+            ],
+            "type": "paragraph"
+        },
+        {
+            "attrs": {
+                "alt": null,
+                "src": "https://static.igem.wiki/teams/4591/wiki/wiki/xyls.png",
+                "title": null
+            },
+            "type": "image"
+        },
+        {
+            "attrs": {
+                "class": null,
+                "textAlign": "left"
+            },
+            "content": [
+                {
+                    "text": "  ",
+                    "type": "text"
+                }
+            ],
+            "type": "paragraph"
+        },
+        {
+            "attrs": {
+                "class": null,
+                "textAlign": "left"
+            },
+            "content": [
+                {
+                    "text": "This module reports the degradation of TPA by expressing the downstream gene green fluorescent protein sfGFP.",
+                    "type": "text"
+                }
+            ],
+            "type": "paragraph"
+        },
+        {
+            "attrs": {
+                "level": 3,
+                "textAlign": "left"
+            },
+            "content": [
+                {
+                    "text": "Attachment Module",
+                    "type": "text"
+                }
+            ],
+            "type": "heading"
+        },
+        {
+            "attrs": {
+                "class": null,
+                "textAlign": "left"
+            },
+            "content": [
+                {
+                    "text": "MstX is a protein that promotes biofilm formation in ",
+                    "type": "text"
+                },
+                {
+                    "marks": [
+                        {
+                            "type": "italic"
+                        }
+                    ],
+                    "text": "Bacillus subtilis",
+                    "type": "text"
+                },
+                {
+                    "text": ". MstX promotes the expression of two proteins (tasA and tapA) required for biofilm formation and the required polysaccharides (EPSA-O, 15 genes in total) by increasing the phosphorylation level of Spo0A, and prevents flagella rotation. Finally, we aim to improve the PET degradation efficiency by promoting the formation of biofilms in engineered bacteria.  ",
+                    "type": "text"
+                }
+            ],
+            "type": "paragraph"
+        },
+        {
+            "attrs": {
+                "class": null,
+                "textAlign": "left"
+            },
+            "content": [
+                {
+                    "text": "If PETase acts directly on the PET surface, it may be difficult to stably adsorb due to its water-soluble nature. As the crystallinity of the plastic increases, the degradation efficiency gradually decreases. BslA is a surfactant protein produced during biofilm formation in Bacillus subtilis. BslA can spontaneously polymerize to form a hydrophobic polymer and build a hydrophobic layer on the biofilm surface.",
+                    "type": "text"
+                }
+            ],
+            "type": "paragraph"
+        },
+        {
+            "attrs": {
+                "alt": null,
+                "src": "https://static.igem.wiki/teams/4591/wiki/wiki/hydro.png",
+                "title": null
+            },
+            "type": "image"
+        },
+        {
+            "attrs": {
+                "class": null,
+                "textAlign": "left"
+            },
+            "content": [
+                {
+                    "text": "Through the combined action of the above two proteins, the adhesion ability of engineered bacteria can be greatly enhanced, their mobility reduced, and the degradation efficiency of PET improved.",
+                    "type": "text"
+                }
+            ],
+            "type": "paragraph"
+        },
+        {
+            "attrs": {
+                "class": null,
+                "textAlign": "left"
+            },
+            "content": [
+                {
+                    "text": "  ",
+                    "type": "text"
+                }
+            ],
+            "type": "paragraph"
+        },
+        {
+            "attrs": {
+                "level": 3,
+                "textAlign": "left"
+            },
+            "content": [
+                {
+                    "text": "Suicide Switch",
+                    "type": "text"
+                }
+            ],
+            "type": "heading"
+        },
+        {
+            "attrs": {
+                "class": null,
+                "textAlign": "left"
+            },
+            "content": [
+                {
+                    "text": "Although our engineered bacteria can propagate in the natural environment, in order to prevent potential unknown hazards after engineered bacteria are released, we designed a lactose promoter to activate the suicide of engineered bacteria. When engineered bacteria encounter lactose, the Plac promoter is activated to express the downstream mazF to activate engineered bacteria suicide.",
+                    "type": "text"
+                }
+            ],
+            "type": "paragraph"
+        },
+        {
+            "attrs": {
+                "alt": null,
+                "src": "https://static.igem.wiki/teams/4591/wiki/wiki/kill.png",
+                "title": null
+            },
+            "type": "image"
+        },
+        {
+            "attrs": {
+                "level": 3,
+                "textAlign": "left"
+            },
+            "content": [
+                {
+                    "text": "Summary",
+                    "type": "text"
+                }
+            ],
+            "type": "heading"
+        },
+        {
+            "attrs": {
+                "class": null,
+                "textAlign": "left"
+            },
+            "content": [
+                {
+                    "text": "This project proposes a microbial system to degrade PET using FAST-PETase and other enzymes. Through module design and kill switch construction, we aim to improve the efficiency and safety of PET degradation. We welcome iGEM teams with related interests to collaborate with us.",
+                    "type": "text"
+                }
+            ],
+            "type": "paragraph"
+        }
+    ],
+    "type": "doc"
+}

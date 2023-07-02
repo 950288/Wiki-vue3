@@ -1,108 +1,13 @@
 <template>
   <div class="content is-large">
-    <h2>width: 1024px</h2>
-    <p>
-      2022-12-25 22:05:14
-    </p>
-    <div id="chart">
-      <!-- iGEMGotool look1 start-->
-      <h1>iGEMGoTool （<a target="_blank" rel="noopener noreferrer nofollow"
-          href="https://github.com/950288/iGEMGoTool/blob/main/README_zh.md">简体中文</a>）🛠️</h1>
-      <p>iGEMGoTool is an online collaborative wiki content editor that enables complete separation of wiki code
-        writing🧑‍💻 and content filling ✍️ with high adaptability and extremely concise operability 🦾, which can
-        greatly improve wiki development efficiency 🥰.</p>
-      <h2>Introduction for Users (developing)🧑‍💼</h2>
-      <p>iGEMGoTool is a user-friendly online editor 🧰 that allows iGEM teams to easily edit wikis. it provides a
-        simple interface for editing wiki content pages. And only one person from the whole team needs to install it to
-        enable collaborative editing for the whole team. With iGEMGoTool, wiki content editors can focus on quality
-        content without having to think about the technical details of HTML and CSS.</p>
-      <p>To use iGEMGoTool, follow these steps:</p>
-      <ul>
-        <li>
-          <p>Download the latest version of the <code>iGEMGoTool</code> zip archive, put the Unziped
-            <code>iGEMGoTool</code> folder into the root directory of your project.
-          </p>
-        </li>
-        <li>
-          <p>Insert the following special tag into your <code>.html</code> file or other custom file type for each
-            section that you want to edit: <code>&lt;!-- iGEMGoTool {{ name }} start--&gt;</code>. Replace
-            <code>{{ name }}</code> with the The custom name for this section.(Note: A page can contain multiple tags and
-            each tag corresponds to a section that can be edited individually.)
-          </p>
-        </li>
-      </ul>
-      <pre><code>&lt;div&gt; &lt;!-- iGEMGotool test1 start--&gt; &lt;/div&gt;</code></pre>
-      <ul>
-        <li>
-          <p>Double-click the iGEMGoTool executable to run the tool. Then you can see to generated URL in the Console
-            like below. You can edit you page in the browser through the generated URL, iGEMGoTool also supports
-            collaborative editing within a LAN (e.g. personal hotspot, campus network, etc.), where team members within
-            the same LAN can access the editing page via the second link.</p>
-        </li>
-      </ul>
-      <p><code>Server started on port 8080 Local: http://127.0.0.1:8080/ Network: http://192.168.Xx.xx:8080/</code></p>
-      <ul>
-        <li>
-          <p>For advanced usage, you can deploy iGEMGoTool to a personal server and open ports for the service without
-            worrying about LAN restrictions</p>
-        </li>
-      </ul>
-      <p>we also provide configuration file, <code>config.json</code>, which will be automatically generated upon the
-        first run of the application. It allows the user to customize certain parameters such as the directory
-        containing the pages to be modified, the directory to store the edited pages data, the port to be used, the tag
-        to be scanned for insertion, and the file types to be scanned. The default values for these parameters can be
-        seen in the example configuration file below:</p>
-      <p>
-        <code>{ // Directory containing the page to be modified (e.g. "D:\\github\\web\\src\\pages") "ScanDirectory": "..\\", // Directory to store the edited page (e.g. "D:\\github\\web\\src\\iGEMGotoolData") "StoreDirectory": "..\\iGEMGotoolData", //Port to be used "Port": 8080, //the tag to be scan and incert content (e.g. "iGEMGotool"), //which be automatically converted to &lt;!-- iGEMGotool {{ name }} start--&gt; "incert tag":"iGEMGotool", //file type to be scan (e.g. [".html",....]) "file type":[".html",".vue"] }</code>
-      </p>
-      <h2>Project Building Guide 🧑‍💻</h2>
-      <p>The following is for developers wishing to make improvements to the tool, but if you just want to do basic
-        usage, no further reading is required!</p>
-      <p>iGEMGoTool is developed using a modern stack that includes Vue 3 and Go. The front-end is implemented using Vue
-        3 and Typescript, and it is built using the Vite build tool. The back-end is implemented using Go and provides a
-        RESTful API for the front-end to interact with.</p>
-      <p>To set up the development environment for iGEMGoTool, you will need to have <a target="_blank"
-          rel="noopener noreferrer nofollow" href="https://nodejs.org/">Node.js</a> and <a target="_blank"
-          rel="noopener noreferrer nofollow" href="https://golang.org/">Go</a> installed on your system. Then, follow
-        these steps:</p>
-      <ul>
-        <li>
-          <p>Clone this repository and navigate to the root directory.</p>
-        </li>
-        <li>
-          <p>Run <code>npm install</code> to install the required dependencies for the front-end.</p>
-        </li>
-      </ul>
-      <p>To start the development for the front-end, run <code>npm run dev</code>. To build the front-end for
-        production, run <code>npm run build-web</code>.</p>
-      <p>All cose for back-end is under the <code>GoTool</code> directory. To start the development for the back-end,
-        run <code>go run GoTool/serve.go</code>. To build the back-end, run <code>npm run build-go</code>.</p>
-      <p>To build both the front-end and back-end for production, run <code>npm run build-all</code>. The target program
-        generated by the compilation is under the dist folder</p>
-      <h2>Working Principle 📝</h2>
-      <p>The working principle of iGEMGoTool can be summarized in the following diagram:</p>
-      <p>The front-end WebEditor sends HTTP requests to the back-end to retrieve and update the edited content. The
-        backend reads and writes automatically generated data files in real time and synchronizes the changes to the
-        wiki code.</p>
-      <h2>Technology Stack 🛠️</h2>
-      <ul>
-        <li>
-          <p>Front-end: Vue 3, TypeScript, Vite, tiptap</p>
-        </li>
-        <li>
-          <p>Back-end: Go</p>
-        </li>
-        <li>
-          <p>Build tool: Vite, go build</p>
-        </li>
-      </ul><!-- iGEMGotool look1 end-->
-      <apexchart v-if="renderComponent" type="line" height="350" :options="chartOptions" :series="series"></apexchart>
+    <!-- <div id="chart"> -->
+      <!-- WikiBreeze des start--><h2>Project Background</h2><p>PET, also known as polyethylene terephthalate, is a type of plastic commonly used to make beverage bottles, food containers and other consumer goods. Although PET is convenient, the harm it brings to the environment is also worth noting. PET accounts for 12% of the world&apos;s solid waste. Theoretically, PET can be degraded into monomers through rapid enzymatic hydrolysis, and then re-polymerized or converted / added value to other products to achieve a circular carbon economy of PET.</p><p>In 2005, enzymes that can degrade PET were first reported, and 19 different PET hydrolytic enzymes (PHEs) have been preliminarily proven. However, most of these enzymes can only show obvious hydrolytic activity at high reaction temperatures and highly processed substrates. Most other PET hydrolytic enzymes have poor activity under moderate temperature and neutral pH conditions. This greatly limits the in situ / microbial degradation solutions for PET waste.</p><p>Recently, a study published in Nature, a research team from the University of Texas at Austin designed a powerful and highly active hydrolytic enzyme that can decompose plastics that usually take centuries to degrade in 24 hours through machine learning algorithms. On the basis of PETase, the team obtained an optimal mutant through engineering modifications and tests, named FAST-PETase (functional, active, stable and tolerant PETase).  </p><p>At the same time, through directed evolution, a new enzyme variant DepoPETase with PET degradation ability similar to FAST-PETase was produced, so it was also included in our consideration.</p><p>The project plans to design a microbial system based on FAST-PETase or DepoPETase to decompose PET in the environment to benefit humanity.</p><h2>PET Degradation</h2><p>With the joint action of PETase and MHETase, PET will decompose into TPA (terephthalic acid).</p><h2>Main Modules</h2><p>We choose <em>Bacillus subtilis</em> as the chassis organism. </p><h3>PET Degradation Module (Core Module)</h3><p>This module is responsible for expressing the synthesis of downstream PET-degrading enzymes PETase and MHETase. These four enzymes (two more not shown in the figure) can degrade PET into PCA, which eventually enters the tricarboxylic acid cycle as a carbon source.</p><img class="image" src="https://static.igem.wiki/teams/4591/wiki/wiki/fast.png"><p>The expression of related genes in this module is controlled by the constitutive promoter P43. In addition, we plan to add a signal peptide SPamy in front of the two plastic degrading enzymes to increase the expression and secretion of the two plastic degrading enzymes.</p><h3>Reporting  Module  </h3><p>XylS is a mixotrophic transcription factor from Pseudomonas putida that can bind benzoate and various derivatives but cannot recognize PA and TPA. This mutant XylS can be used to construct a biosensor for PA and TPA detection to detect the presence of TPA and activate the corresponding module (regulated by promoter Pm).</p><img class="image" src="https://static.igem.wiki/teams/4591/wiki/wiki/xyls.png"><p>  </p><p>This module reports the degradation of TPA by expressing the downstream gene green fluorescent protein sfGFP.</p><h3>Attachment Module</h3><p>MstX is a protein that promotes biofilm formation in <em>Bacillus subtilis</em>. MstX promotes the expression of two proteins (tasA and tapA) required for biofilm formation and the required polysaccharides (EPSA-O, 15 genes in total) by increasing the phosphorylation level of Spo0A, and prevents flagella rotation. Finally, we aim to improve the PET degradation efficiency by promoting the formation of biofilms in engineered bacteria.  </p><p>If PETase acts directly on the PET surface, it may be difficult to stably adsorb due to its water-soluble nature. As the crystallinity of the plastic increases, the degradation efficiency gradually decreases. BslA is a surfactant protein produced during biofilm formation in Bacillus subtilis. BslA can spontaneously polymerize to form a hydrophobic polymer and build a hydrophobic layer on the biofilm surface.</p><img class="image" src="https://static.igem.wiki/teams/4591/wiki/wiki/hydro.png"><p>Through the combined action of the above two proteins, the adhesion ability of engineered bacteria can be greatly enhanced, their mobility reduced, and the degradation efficiency of PET improved.</p><p>  </p><h3>Suicide Switch</h3><p>Although our engineered bacteria can propagate in the natural environment, in order to prevent potential unknown hazards after engineered bacteria are released, we designed a lactose promoter to activate the suicide of engineered bacteria. When engineered bacteria encounter lactose, the Plac promoter is activated to express the downstream mazF to activate engineered bacteria suicide.</p><img class="image" src="https://static.igem.wiki/teams/4591/wiki/wiki/kill.png"><h3>Summary</h3><p>This project proposes a microbial system to degrade PET using FAST-PETase and other enzymes. Through module design and kill switch construction, we aim to improve the efficiency and safety of PET degradation. We welcome iGEM teams with related interests to collaborate with us.</p><!-- WikiBreeze des end-->
 
-      <!-- iGEMGotool look1 start-->
+      <apexchart v-if="renderComponent" type="line" height="350" :options="chartOptions" :series="series"></apexchart>
       <apexchart v-if="renderComponent" type="area" height="350" :options="chartOptions0" :series="series0"></apexchart>
       <apexchart v-if="renderComponent" type="line" height="350" :options="chartOptions" :series="series"></apexchart>
       <apexchart v-if="renderComponent" type="area" height="350" :options="chartOptions0" :series="series0"></apexchart>
-    </div>
+    <!-- </div> -->
   </div>
 </template>
 <script setup lang="ts">
