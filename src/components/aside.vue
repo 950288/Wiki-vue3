@@ -4,7 +4,6 @@
             <p class="heading">on this page</p>
             <div class="heading-container">
                 <div v-for="heading , index in headingList" :key="index" class="heading-h1">
-                        <!-- :herf="'#'+ heading.id" -->
                     <div class="heading-h1"><a class="heading-link">{{heading.text}}</a></div>
                     <div v-for="subheading , subindex in heading.subheading" :key="subindex" class="heading-h2">
                         <div class="heading-h2"><a class="heading-link">{{subheading.text}}</a></div>
